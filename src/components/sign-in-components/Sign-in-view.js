@@ -1,9 +1,21 @@
 import React from 'react';
+import logo from '../../img/img-login.jpg';
+import styles from './Sign-in.module.css';
 
 const SignInView = () => {
   return (
-    <div>
-      <h1>Estas en la vista de inicio para ingresar</h1>
+    <div className={styles.container}>
+      <div>
+        <img src={logo} className={styles.logo} alt="" />
+      </div>
+      <div>
+        <img src="img/" alt="" />
+      </div>
+      <div>
+        <input type="text"></input>
+        <button>Mesero</button>
+        <button>Cocinero</button>
+      </div>
     </div>
   );
 }
