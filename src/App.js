@@ -5,9 +5,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import ChefView from './componentes routes/Chef-view';
-import WaiterView from './componentes routes/Waiter-view';
-import SignInView from './componentes routes/Sign-in-view';
+import ChefView from './components/chef-components/Chef-view';
+import WaiterView from './components/waiter-components/Waiter-view';
+import SignInView from './components/sign-in-components/Sign-in-view';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <div>
         <ul>
           <li>
-            <Link to="/" exact>Home</Link>
+            <Link to="/" exact="true">Home</Link>
           </li>
           <li>
             <Link to="/waiter">Waiter</Link>
