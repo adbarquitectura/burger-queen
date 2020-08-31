@@ -1,6 +1,18 @@
 .container{
     background-color: red;
+    display: flex;
 }
 .logo{
-    width: 100px;
+    width: 40%;
 }
+Link, input{
+    background-color: orange;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    float: right;
+   
+}
+

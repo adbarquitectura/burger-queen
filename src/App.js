@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       <div>
-        <ul>
+        {/* <ul>
           <li>
             <Link to="/" exact="true">Home</Link>
           </li>
@@ -23,7 +23,7 @@ function App() {
           <li>
             <Link to="/chef">Chef</Link>
           </li>
-        </ul>
+        </ul> */}
         <Switch>
           <Route path="/chef">
             <ChefView />

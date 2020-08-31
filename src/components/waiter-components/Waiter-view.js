@@ -1,10 +1,15 @@
 import React from 'react';
 import styles from './Waiter.module.css';
+import NavBarLateral from './Nav-bar-component';
+import ItemMenu from './Item-menu';
+
 
 const WaiterView = () => {
   return (
     <div className={styles.container}>
-      <h1>Estas en la vista del mesero</h1>
+      <NavBarLateral/>
+      <ItemMenu/>      
+      <div className={styles.sectionOrder}>Seccion de pedido</div>
     </div>
   );
 }

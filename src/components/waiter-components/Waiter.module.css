@@ -1,3 +1,24 @@
 .container{
-    background-color: blueviolet;
+    background-color: transparent;
+    display: flex;
+    height: 100%;
+}
+.logo{
+    width: 60%;
+    height: auto;
+    margin: auto;
+}
+.navBar{
+    background-color: #FCBF49;
+    width: 20%;
+    padding-left: 5px;
+}
+.sectionMenu{
+    background-color: #F0EFEB;
+    width: 50%;
+    display: block;
+}
+.sectionOrder{
+    background-color: #616161;
+    width: 30%;
 }

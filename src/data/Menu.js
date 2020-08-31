@@ -1,5 +1,5 @@
 export default {
-    "data-menu":
+    "menucito":
     [
         {
             "id": "1",
