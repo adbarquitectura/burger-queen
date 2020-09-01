@@ -1,22 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styles from './Waiter.module.css';
-import menuData from '../../data/Menu.js';
 
-const menuCocina = menuData.menucito;
-
-const ItemMenu = () => {
-  return (
-    menuCocina.map(item => {
-      console.log(item);
-      return(
-      <div className={styles.sectionMenu}>
-        <img src={item.img} alt="" />
-        <h1>{item.nombre}</h1>
-        <p>{item.descripcion}</p>
-      </div>
-      );    
-})
-);
+class ItemMenu extends Component {
+  state = {
+    menuData: []
+  };
+  componentDidMount() {
+    fetch('data/Menu.json')
+      .then(response => response.json())
+      .then(data => this.setState({ menuData: data }));
+  }
+  render() {
+    const { menuData } = this.state;
+    return (
+      menuData.map(item => {
+        console.log(item);
+        return (
+          <div key={item.id} className={styles.sectionMenu}>
+            <img src={item.img} alt="" className={styles.imgItemMenu} />
+            <h1>{item.nombre}</h1>
+          </div>
+        );
+      }
+      )
+    )
+  };
 };
 
 export default ItemMenu;

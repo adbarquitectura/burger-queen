@@ -1,6 +1,4 @@
 import React from 'react';
-import imgHome from '../../img/img-login.jpg';
-import logo from '../../img/logo.png';
 import styles from './Sign-in.module.css';
 
 import {  
@@ -11,10 +9,10 @@ const SignInView = () => {
   return (
     <div className={styles.container}>
       <div>
-        <img src={imgHome} className={styles.logo} alt="" />
+        <img src="img/img-login.jpg" className={styles.logo} alt="" />
       </div>
       <div>
-        <img src={logo} className={styles.logo} alt="" />
+        <img src="img/logo.png"  className={styles.logo} alt="" />
       </div>
       <div>
         <input type="text"></input>
