@@ -2,15 +2,16 @@
     background-color: transparent;
     display: flex;
     height: 100%;
+    /* justify-content: space-between; */
 }
 .logo{
     width: 100px;
     height: 100px;
-    margin: auto;
+    margin: 20px auto auto auto;
 }
 .navBar{
     background-color: #FCBF49;
-    width: 20%;
+    width: 15%;
     padding-left: 5px;
     flex: 2 1 auto;
     /* align-items: center; */
@@ -19,37 +20,43 @@
     /* align-content: center; */
 }
 .sectionMenu{
-    margin: auto;
+    margin: 30px 30px 30px 30px;
+    width: 55%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 40px;
+    justify-content: start;       
+    box-sizing: border-box;
 }
 
 .imgItemMenu{
-    width: 100px;
-    height: 100px;
+    background-color: #F0EFEB;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
-    border: solid gray 2px;
-    border-radius: 5px;
+    border: solid gray 2px;    
 }
 
 .box{
     display: grid;
-    perspective: 700px;
-    padding: 10px;
+    /* perspective: 700px;
+    padding: 5px; */
 }
 
 .card{
     align-items: center;
-    width: 300px;
-    height: 350px;
-    position: relative;
+    width: 150px;
+    height: 200px;
+    /* position: relative; */
     display: grid;
-    grid-template: 1fr / 1fr;
+    /* grid-template: 7.fr / .7fr; */
 }
 
 .sectionOrder{
     background-color: #616161;
-    width: auto;
+    width: 35%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+h1{
+    font-size: 1rem;
 }

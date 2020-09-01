@@ -15,8 +15,8 @@ class ItemMenu extends Component {
     return (
       menuData.map(item => {
         return (
-           <div className={styles.box}>
-            <div key={item.id} className={styles.card}>
+           <div key={item.id} className={styles.box}>
+            <div className={styles.card}>
             <img src={item.img} alt="" className={styles.imgItemMenu} />
             <h1>{item.nombre}</h1>
           </div>
