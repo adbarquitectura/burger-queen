@@ -16,7 +16,7 @@ class ItemMenu extends Component {
       menuData.map(item => {
         console.log(item);
         return (
-          <div key={item.id} className={styles.sectionMenu}>
+          <div key={item.id} >
             <img src={item.img} alt="" className={styles.imgItemMenu} />
             <h1>{item.nombre}</h1>
           </div>

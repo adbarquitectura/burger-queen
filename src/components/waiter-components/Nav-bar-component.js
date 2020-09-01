@@ -4,7 +4,7 @@ import styles from './Waiter.module.css';
 
 const NavBarLateral = () => {
   return (
-    <div className={styles.navBar}>
+    <div>
       <div>
         <img src={logo} className={styles.logo} alt="" />
       </div>

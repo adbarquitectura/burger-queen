@@ -1,26 +1,36 @@
 .container{
     background-color: transparent;
-    display: flex;    
+    display: flex;
     height: 100%;
 }
 .logo{
-    width: 60%;
-    height: auto;
+    width: 100px;
+    height: 100px;
     margin: auto;
 }
 .navBar{
     background-color: #FCBF49;
-    width: 20%;
+    width: auto;
     padding-left: 5px;
+    flex: 2 1 auto;
+    /* align-items: center; */
+    display: flex;
+    flex-flow: row;
+    /* align-content: center; */
 }
 .sectionMenu{
     background-color: #F0EFEB;
-    width: 50%;
-    display: block;
+    width: auto;  
+    flex: 3 3 auto;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
 }
 .sectionOrder{
     background-color: #616161;
-    width: 30%;
+    width: auto;
+
 }
 .imgItemMenu{
     width: 100px;
