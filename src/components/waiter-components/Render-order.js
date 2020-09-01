@@ -9,15 +9,18 @@ const RenderOrder = () => {
                 <table>
                     <tbody>
                         <tr>
+                            <th></th>
                             <th>ITEM</th>
                             <th>CANTIDAD</th>
                             <th>PRECIO</th>
+                            <th></th>
                         </tr>
                         <tr>
+                            <td>Icono Edit</td>
                             <td>Jlo</td>
                             <td>1</td>
                             <td>500</td>
-                            <td>papelera</td>
+                            <td>Icono papelera</td>
                         </tr>
                         <tr>
                             <td>La Rosalia</td>
