@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Waiter.module.css';
+// import styles from './Waiter.module.css';
 
 const RenderOrder = () => {
     return (
