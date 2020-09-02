@@ -15,7 +15,7 @@ const RenderOrder = () => {
             querySnapshot.forEach((doc) => {
                 console.log(doc.data());
             });
-            console.log(items);
+            setValorIngresado('pedido #'+ querySnapshot.docs.length);
         });
     }
 
