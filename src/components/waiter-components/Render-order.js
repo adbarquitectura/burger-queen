@@ -11,7 +11,7 @@ const RenderOrder = () => {
 
     const pruebaFire = () => {
         ref.onSnapshot((querySnapshot) => {
-            const items = [];
+            // const items = [];
             querySnapshot.forEach((doc) => {
                 console.log(doc.data());
             });
