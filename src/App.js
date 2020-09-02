@@ -9,7 +9,8 @@ import ChefView from './components/chef-components/Chef-view';
 import WaiterView from './components/waiter-components/Waiter-view';
 import SignInView from './components/sign-in-components/Sign-in-view';
 
-function App() {
+
+function App() { 
   return (
     <Router>
       <div>

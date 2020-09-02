@@ -1,7 +1,36 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 // import styles from './Waiter.module.css';
+import firebase from "../../firebase/Firebase";
 
 const RenderOrder = () => {
+    const ref = firebase.firestore().collection('ordenes');
+
+    const pruebaFire = () => {               
+        ref.onSnapshot((querySnapshot) => {
+            const items = [];
+            querySnapshot.forEach((doc) => {               
+                console.log (doc.data());
+            });
+            console.log(items);
+        });
+    }
+
+    const pruebaFireGet = () => {               
+        ref
+        .get()
+        .then((data)=>{
+            const dataItem= data.docs.forEach(doc => {
+                console.log (doc.data());
+            });
+        })        
+       
+    }
+
+    useEffect(() => {
+        pruebaFire();
+    }, []);
+
+
     return (
         <div>
             <h1>Pedidos</h1>
