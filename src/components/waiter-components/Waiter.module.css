@@ -115,3 +115,23 @@ button{
     width: 50px;
 }
 
+ .datosPersonalizados{
+    color: rgb(39, 38, 38);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-top: 15rem;
+    padding: 10px;
+ 
+ }
+
+ .datosPersonalizados:hover{
+     color:rgb(114, 109, 109);
+ }
+
+.fecha{
+    color: rgb(39, 38, 38);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-top: 16rem;
+    text-align-last: center;
+}

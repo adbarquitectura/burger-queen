@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import styles from './Waiter.module.css';
-import NavBarLateral from './Nav-bar-component';
+import logo from '../../img/logo.png';
 import ItemMenu from './Item-menu';
 import RenderOrder from './Render-order';
 import ItemPostres from './Item-postres';
+import CurrentTime from './Fecha';
 
 class WaiterView extends Component {
 
@@ -22,12 +23,28 @@ class WaiterView extends Component {
 
       <div className={styles.container}>
         <div className={styles.navBar}>
-          <NavBarLateral />
+          <div >
+            <img src={logo} className={styles.logo} alt="" />
+          </div>
+          <nav className={styles.links}>
+            {/*    <ul>
+              <li><a href="/">Menú Principal</a></li>
+              <li><a href="/">Postres</a></li>
+              <li><a href="/">Pedidos</a></li>
+            </ul> */}
+            <div className={styles.datosPersonalizados}>
+              <p onClick={() => this.updatemenu(false)}>Menú Principal</p>
+              <p onClick={() => this.updatemenu(true)}>Postres</p>
+            </div>
+            <div className={styles.fecha}>
+              <p>Pedro</p>
+              <CurrentTime />
+            </div>
+          </nav>
         </div>
         <div className={styles.allmenu}>
           <div className={styles.barra}>
-            <div> <button onClick={() => this.updatemenu(false)}>Menú Principal</button></div>
-            <div><button onClick={() => this.updatemenu(true)}>Postres</button></div>
+
           </div>
           <div className={styles.sectionMenu}>
             {
