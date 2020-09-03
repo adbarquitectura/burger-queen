@@ -1,3 +1,44 @@
 .container{
-    background-color:green;
+    display: flex;
+    flex-flow: row;
+    background-color: transparent;
+    display: flex;
+    height: 100%;
+    /* justify-content: space-between; */
 }
+.logo{
+    width: 100px;
+    height: 100px;
+    margin: 20px auto auto auto;
+}
+.navBar{
+    display: flex;
+    flex-flow: column;
+    background-color: #FCBF49;
+    width: 20%;
+    padding-left: 5px;
+    align-items: center;
+
+   
+}
+.sectionPedido{
+  display: flex;
+  flex-flow: column;
+  width: 60%;
+  align-items: center;
+}
+
+.sectionPedidolisto{
+    display: flex;
+   flex-flow: column;
+    background-color: #616161;
+    width: 35%;
+    padding: 10px;
+    box-sizing: border-box;
+    align-items: center;
+}
+h3{
+    margin: 5px;
+    font-size: 15px;}
+
+
