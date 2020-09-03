@@ -6,6 +6,7 @@ import ItemPedido from './Item-pedido';
 
 const RenderOrder = () => {
     console.log('componente Orden');
+    
     const [valorIngresado, setValorIngresado] = useState('');
 
     const [itemIngresado, setitemIngresado] = useState('');
@@ -48,7 +49,14 @@ const RenderOrder = () => {
 
     const pruebaFireAdd = () => {
         return ref.add({
-            nombre: valorIngresado
+        id: "1",
+        nombre: "La Rosalia",
+        cantidad: "",
+        precio: "5000",
+        adicionales: [{}],
+        observaciones: "",
+        editar: "true",
+        eliminar: "false"
         });
     }
 
