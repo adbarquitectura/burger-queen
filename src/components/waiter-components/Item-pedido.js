@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Waiter.module.css';
 import firebase from "../../firebase/Firebase";
-import ItemPedido from './Item-pedido';
 
 
-const RenderOrder = () => {
-    console.log('componente Orden');
+const ItemPedido = (props) => {
+    /* console.log('componente Orden');
     const [valorIngresado, setValorIngresado] = useState('');
 
     const [itemIngresado, setitemIngresado] = useState('');
     const [cantidadItemIngresado, setcantidadItemIngresado] = useState('0');
     const [precioItemIngresado, setprecioItemIngresado] = useState('');
-    const [totalPedidoIngresado, settotalPedidoIngresado] = useState('');
 
     const [editarItemIngresado, seteditarItemIngresadoo] = useState('false');
     const [eliminarItemIngresado, seteliminarItemIngresado] = useState('false');
@@ -31,7 +29,7 @@ const RenderOrder = () => {
             querySnapshot.forEach((doc) => {
                 console.log(doc.data());
             });
-            setValorIngresado('pedido #'+ querySnapshot.docs.length);
+            setValorIngresado('pedido #' + querySnapshot.docs.length);
         });
     }
 
@@ -52,8 +50,6 @@ const RenderOrder = () => {
         });
     }
 
-
-    
     useEffect(() => {
         pruebaFire();
     }, []);
@@ -70,36 +66,23 @@ const RenderOrder = () => {
     const captureValue = (event) => {
         setValorIngresado(event.target.value);
         console.log(valorIngresado);
-    }
+    } */
 
     return (
         <div>
-            <h1>Pedidos</h1>
-            <div>
-                <table>
-                    <tbody>
-                        <tr>
-                            <th></th>
-                            <th>ITEM</th>
-                            <th>CANTIDAD</th>
-                            <th>PRECIO</th>
-                            <th></th>
-                        </tr>
-                        <ItemPedido
-                        nombre= {itemIngresado}
-                        cantidad="1"
-                        precio="500"
-                        />                       
-                    </tbody>
-                </table>
-            </div>
-            <h2>Total: {totalPedidoIngresado} </h2>
-            <h2>Numero de Pedido:<input value={valorIngresado}></input></h2>
-            <h2>Cliente:<input value={nameClientIngresado.name}></input></h2>            
-            <button onClick={btnEnviarPedido}>Enviar Pedido</button>
-            <button className={styles.btnAlert}>Eliminar Pedido</button>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><button className={styles.btnIcon}>Editar Pedido</button></td>
+                        <td value={props.nombre}></td>
+                        <td value={props.cantidad}></td>
+                        <td value={props.precio}></td>
+                        <td><button className={styles.btnIcon}>Eliminar Pedido</button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     );
 }
 
-export default RenderOrder;
+export default ItemPedido;
