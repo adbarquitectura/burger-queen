@@ -1,25 +1,25 @@
 import React from 'react';
 import styles from './Sign-in.module.css';
 
-import {  
+import {
   Link
 } from "react-router-dom";
 
 const SignInView = () => {
   return (
     <div className={styles.container}>
-      <div>
-        <img src="img/img-login.jpg" className={styles.logo} alt="" />
+      <div className={styles.imglogin}>
+        <img src="img/img-login.jpg" className={styles.loginimg} alt="" />
       </div>
-      <div>
-        <img src="img/logo.png"  className={styles.logo} alt="" />
-      </div>
-      <div>
-        <input type="text"></input>
-        {/* <button>Mesero</button> */}
-        <div><Link to="/waiter">Waiter</Link></div>
-        <div><Link to="/chef">Chef</Link></div>
-        {/* <button>Cocinero</button> */}               
+      <div className={styles.signin}>
+        <div className={styles.logosignin}>
+          <img src="img/logo.png" className={styles.logo} alt="" />
+        </div>
+        <div><input type="text"></input></div>
+        <div>
+          <div className={styles.buttonlink}><Link to="/waiter">Waiter</Link></div>
+          <div className={styles.buttonlink}><Link to="/chef">Chef</Link></div>
+        </div>
       </div>
     </div>
   );
