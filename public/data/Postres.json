@@ -36,7 +36,7 @@
         "vendidos": [],
         "precio": "4500",
         "url": "torta-de-chocolate",
-        "img": "./postre-2.png",
+        "img": "./img/postre-2.png",
         "adicionales": [
             {
                 "crema chantilly": "",

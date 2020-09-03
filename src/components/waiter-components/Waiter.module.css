@@ -57,6 +57,26 @@
     padding: 10px;
     box-sizing: border-box;
 }
-h1{
+
+
+.options{
     font-size: 1rem;
+    color: #FFFFFF;
+}
+
+.sectionPostres{
+    margin: 30px 30px 30px 30px;
+    width: 55%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;       
+    box-sizing: border-box;
+   display: none;
+}
+
+.datosPersonalizados{
+    color: rgb(39, 38, 38);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-top: 26rem;
 }

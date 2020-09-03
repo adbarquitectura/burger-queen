@@ -8,6 +8,7 @@ import {
 import ChefView from './components/chef-components/Chef-view';
 import WaiterView from './components/waiter-components/Waiter-view';
 import SignInView from './components/sign-in-components/Sign-in-view';
+import ItemPostres from './components/waiter-components/ItemPostres';
 
 
 function App() { 
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/waiter">
             <WaiterView />
+          </Route>
+          <Route path="/postres">
+        <ItemPostres />
           </Route>
           <Route path="/">
             <SignInView />

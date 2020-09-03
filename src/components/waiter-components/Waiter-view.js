@@ -3,6 +3,7 @@ import styles from './Waiter.module.css';
 import NavBarLateral from './Nav-bar-component';
 import ItemMenu from './Item-menu';
 import RenderOrder from './Render-order';
+import ItemPostres from './ItemPostres';
 
 
 const WaiterView = () => {
@@ -13,8 +14,11 @@ const WaiterView = () => {
       </div>
       <div className={styles.sectionMenu}>
         <ItemMenu />
+        <div className={styles.sectionPostres}>
+          <ItemPostres />
+        </div>
       </div>
-      <div  className={styles.sectionOrder}>
+      <div className={styles.sectionOrder}>
         <RenderOrder />
       </div>
     </div>
