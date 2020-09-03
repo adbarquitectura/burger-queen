@@ -18,7 +18,7 @@ class ItemMenu extends Component {
            <div key={item.id} className={styles.box}>
             <div className={styles.card}>
             <img src={item.img} alt="" className={styles.imgItemMenu} />
-            <h1>{item.nombre}</h1>
+            <h3>{item.nombre}</h3>
           </div>
           </div>
        
