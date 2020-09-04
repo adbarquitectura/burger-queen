@@ -124,8 +124,8 @@ const RenderOrder = () => {
                 <button onClick={btnEnviarPedido}>Enviar Pedido</button>
                 <button className={styles.btnAlert}>Eliminar Pedido</button>
             </div>
-  <form>
-            <textarea className={styles.textarea} type="search" name= "post" placeholder="Observaciones:"> </textarea>
+            <form>
+                <textarea className={styles.textarea} type="search" name="post" placeholder="Observaciones:"> </textarea>
             </form>
         </div>
     );
