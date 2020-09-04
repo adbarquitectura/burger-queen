@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Waiter.module.css';
 import firebase from "../../firebase/Firebase";
-import ItemPedido from './Item-pedido';
+
+// import ItemPedido from './Item-pedido';
 
 
 const RenderOrder = () => {
     console.log('componente Orden');
-    
+
+    const [renderPedido, setRenderPedido] = useState([]);
+
     const [valorIngresado, setValorIngresado] = useState('');
 
-    const [itemIngresado, setitemIngresado] = useState('');
-    const [cantidadItemIngresado, setcantidadItemIngresado] = useState('0');
-    const [precioItemIngresado, setprecioItemIngresado] = useState('');
+    const [itemIngresado, setitemIngresado] = useState('La Rosalia');
+    const [cantidadItemIngresado, setcantidadItemIngresado] = useState('1');
+    const [precioItemIngresado, setprecioItemIngresado] = useState('5000');
     const [totalPedidoIngresado, settotalPedidoIngresado] = useState('');
 
     const [editarItemIngresado, seteditarItemIngresadoo] = useState('false');
@@ -32,7 +35,7 @@ const RenderOrder = () => {
             querySnapshot.forEach((doc) => {
                 console.log(doc.data());
             });
-            setValorIngresado('pedido #'+ querySnapshot.docs.length);
+            setValorIngresado('pedido #' + querySnapshot.docs.length);
         });
     }
 
@@ -44,24 +47,23 @@ const RenderOrder = () => {
                     console.log(doc.data());
                 });
             })
-
     }
 
     const pruebaFireAdd = () => {
         return ref.add({
-        id: "1",
-        nombre: "La Rosalia",
-        cantidad: "",
-        precio: "5000",
-        adicionales: [{}],
-        observaciones: "",
-        editar: "true",
-        eliminar: "false"
+            id: "1",
+            nombre: "La Rosalia",
+            cantidad: "",
+            precio: "5000",
+            adicionales: [{}],
+            observaciones: "",
+            editar: "true",
+            eliminar: "false"
         });
     }
 
 
-    
+
     useEffect(() => {
         pruebaFire();
     }, []);
@@ -82,32 +84,49 @@ const RenderOrder = () => {
 
     return (
         <div>
-            <h1>Pedidos</h1>
-            <div>
-                <table>
-                    <tbody>
-                        <tr>
-                            <th></th>
-                            <th>ITEM</th>
-                            <th>CANTIDAD</th>
-                            <th>PRECIO</th>
-                            <th></th>
-                        </tr>
-                        <ItemPedido
-                        nombre= {itemIngresado}
-                        cantidad="1"
-                        precio="500"
-                        />                       
-                    </tbody>
-                </table>
+            <div className={styles.tabla}>
+                <h1>Pedidos</h1>
+                <div>
+                    {renderPedido}
+
+                </div>
+                <div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th></th>
+                                <th>ITEM</th>
+                                <th>CANTIDAD</th>
+                                <th>PRECIO</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td><button className={styles.btnIcon}>Editar Pedido</button></td>
+                                <td>{itemIngresado}</td>
+                                <td>{cantidadItemIngresado}</td>
+                                <td>{precioItemIngresado}</td>
+                                <td><button className={styles.btnIcon}>Eliminar Pedido</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>Total: {totalPedidoIngresado} </h2>
+                </div>
             </div>
-            <h2>Total: {totalPedidoIngresado} </h2>
-            <h2>Numero de Pedido:<input value={valorIngresado}></input></h2>
-            <h2>Cliente:<input value={nameClientIngresado.name}></input></h2>            
-            <button onClick={btnEnviarPedido}>Enviar Pedido</button>
-            <button className={styles.btnAlert}>Eliminar Pedido</button>
+
+            <div className={styles.sectionDatosCliente}>
+                <h2>Numero de Pedido:</h2>
+                <input className={styles.inputCliente} value={valorIngresado}></input>
+                <h2>Cliente:</h2>
+                <input className={styles.inputCliente} value={nameClientIngresado.name}></input>
+            </div>
+            <div className={styles.sectionBtns}>
+                <button onClick={btnEnviarPedido}>Enviar Pedido</button>
+                <button className={styles.btnAlert}>Eliminar Pedido</button>
+            </div>
+
         </div>
     );
 }
+
 
 export default RenderOrder;

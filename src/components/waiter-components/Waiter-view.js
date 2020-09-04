@@ -20,37 +20,29 @@ class WaiterView extends Component {
   render() {
     const desiredMenu = this.state;
     return (
-
       <div className={styles.container}>
         <div className={styles.navBar}>
           <div >
             <img src={logo} className={styles.logo} alt="" />
           </div>
-          <nav className={styles.links}>
-            {/*    <ul>
-              <li><a href="/">Menú Principal</a></li>
-              <li><a href="/">Postres</a></li>
-              <li><a href="/">Pedidos</a></li>
-            </ul> */}
+          <div>
             <div className={styles.datosPersonalizados}>
-              <p onClick={() => this.updatemenu(false)}>Menú Principal</p>
-              <p onClick={() => this.updatemenu(true)}>Postres</p>
+              <p onClick={() => this.updatemenu(true)}>Menú Principal</p>
+              <p onClick={() => this.updatemenu(false)}>Postres</p>
             </div>
             <div className={styles.fecha}>
               <p>Pedro</p>
               <CurrentTime />
             </div>
-          </nav>
-        </div>
-        <div className={styles.allmenu}>
-          <div className={styles.barra}>
-
           </div>
+        </div>
+        <div className={styles.sectionMenu}>
+          <div className={styles.barra}></div>
           <div className={styles.sectionMenu}>
             {
-              this.state.showMenu ? <ItemPostres />
+              this.state.showMenu ? <ItemMenu />
                 :
-                <ItemMenu />
+                <ItemPostres />
             }
           </div>
         </div>
@@ -60,7 +52,7 @@ class WaiterView extends Component {
       </div >
     );
   }
-
 }
+
 export default WaiterView;
 

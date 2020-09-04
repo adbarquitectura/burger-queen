@@ -18,7 +18,7 @@ class ItemPostres extends Component {
            <div key={item.id} className={styles.box2}>
             <div className={styles.card}>
             <img src={item.img} alt="" className={styles.imgItemPostres} />
-            <h1>{item.nombre}</h1>
+            <h3>{item.nombre}</h3>
           </div>
           </div>
        

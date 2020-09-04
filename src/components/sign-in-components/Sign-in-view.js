@@ -15,7 +15,9 @@ const SignInView = () => {
         <div className={styles.logosignin}>
           <img src="img/logo.png" className={styles.logo} alt="" />
         </div>
-        <div><input type="text"></input></div>
+        <div>
+          <input type="text"></input>
+        </div>
         <div>
           <div className={styles.buttonlink}><Link to="/waiter">Waiter</Link></div>
           <div className={styles.buttonlink}><Link to="/chef">Chef</Link></div>
