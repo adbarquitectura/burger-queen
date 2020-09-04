@@ -1,9 +1,6 @@
 .container{
     display: flex;
     flex-flow: row;
-    background-color: transparent;
-    display: flex;
-    height: 100%;
     /* justify-content: space-between; */
 }
 .logo{
@@ -15,9 +12,10 @@
     display: flex;
     flex-flow: column;
     background-color: #FCBF49;
-    width: 20%;
+    width: 15%;
     padding-left: 5px;
     align-items: center;
+    height: 100%;
 
    
 }
@@ -26,19 +24,101 @@
   flex-flow: column;
   width: 60%;
   align-items: center;
+  height: 100%;
 }
 
 .sectionPedidolisto{
     display: flex;
-   flex-flow: column;
+    flex-flow: column;
     background-color: #616161;
-    width: 35%;
+    width: 50%;
     padding: 10px;
     box-sizing: border-box;
     align-items: center;
+
 }
 h3{
     margin: 5px;
     font-size: 15px;}
+
+.cajaPedido{
+display: flex;
+flex-flow: column;
+width:90%;
+align-items: center;
+align-content: center;
+margin-top:30px;
+border: solid gray 3px;
+border-radius: 10px; 
+
+
+}
+
+.pedidoitems{
+display: flex;
+flex-flow: row;
+align-items: center;
+width:90%;
+}
+.items{
+text-align: center;
+
+
+}
+
+
+.cantidad{
+align-items: center;
+text-align: center;
+
+}
+
+.observaciones{
+align-items: center;
+text-align: center;
+margin-left: 30%;
+}
+
+.buttonKitchen{
+margin-top: 20px;
+margin-bottom: 10px;
+
+
+
+}
+.boxKitchen{
+display: flex;
+flex-flow: row;
+align-content: center;
+border-radius: 5px;
+border: solid white 3px;
+width: 100%;
+
+}
+.buttonSee{
+width: 90%;
+background-color: rgba(251, 86, 7, 1) ;
+}
+.seeOrder{
+flex: 1 1;
+}
+.numberAndtime{
+flex: 1 1;
+margin-left: 10px;   
+}
+
+.customerName{
+flex: 1 1;   
+} 
+.fecha{
+    color: rgb(39, 38, 38);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-top: 90%;
+    text-align: center;
+}
+
+
+
 
 
