@@ -185,3 +185,26 @@ display: block;
     margin-bottom: 0;
     /* background-color: tomato; */
 }
+
+.textarea {
+    font-family: "Open Sans", sans-serif;
+      padding-top: 1em;
+      outline: none;
+      background: #fdfdf2 !important;
+      border-radius: 2em;
+      font-size: 13px;
+      text-align: center;
+      border-color: #00000029;
+      width: 30em;
+      height: 31px;
+      margin-top: 2em;
+      margin-left: 4em;
+      padding-right: 1em;
+      padding-left: 35px;
+      font-family: "Open Sans", sans-serif;
+      text-align: center;
+      padding-block-end: 11px;
+      padding-block-start: 25px;
+      cursor: pointer;
+  }
+  
