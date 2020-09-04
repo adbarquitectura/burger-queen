@@ -15,9 +15,9 @@ class ItemPostres extends Component {
     return (
       postresData.map(item => {
         return (
-           <div key={item.id} className={styles.box2}>
+           <div key={item.id} className={styles.box}>
             <div className={styles.card}>
-            <img src={item.img} alt="" className={styles.imgItemPostres} />
+            <img src={item.img} alt="" className={styles.imgItemMenu} />
             <h3>{item.nombre}</h3>
           </div>
           </div>

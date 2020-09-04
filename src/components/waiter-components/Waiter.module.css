@@ -29,48 +29,39 @@
 }
 
 .sectionMenu{
-    margin: 30px 15px 15px 15px;
     width: 100%;
     display: flex;
     flex-wrap:wrap;
     justify-content: start;
     align-items: center; 
     box-sizing:border-box;
-    margin-block-end: auto;       
+    margin-block-end: auto;
+    background-color: #F0EFEB;      
 }
 
 .imgItemMenu{
-    background-color: #F0EFEB;
     width: 100px;
     height: 100px;
     object-fit: cover;
-    border: solid gray 2px;
-    margin: 0 auto 0 auto;    
-}
-
-.imgItemPostres{
-    background-color: #F0EFEB;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border: solid gray 2px;
-    margin: 0 auto 0 auto;    
+    /* border: solid gray 2px; */
+    margin: 4px auto 0 auto;    
 }
 
 .box{
     display: grid;
     margin: 0 auto auto auto;
-}
-.box2{
-    display: grid;    
+    
 }
 
 .card{
     align-items: center;
-    margin: 30px 15px 30px 15px; 
+    margin: 15px 15px 15px 15px; 
     box-sizing: border-box;
-    width: 120px;   
-    display: grid;    
+    width: 120px;
+    height: 160px;   
+    display: grid;
+    background-color: white;
+    border-radius: 3px;     
 }
 
 .sectionOrder{
