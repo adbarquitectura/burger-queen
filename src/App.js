@@ -10,21 +10,10 @@ import WaiterView from './components/waiter-components/Waiter-view';
 import SignInView from './components/sign-in-components/Sign-in-view';
 
 
-function App() { 
+function App() {
   return (
     <Router>
       <div>
-        {/* <ul>
-          <li>
-            <Link to="/" exact="true">Home</Link>
-          </li>
-          <li>
-            <Link to="/waiter">Waiter</Link>
-          </li>
-          <li>
-            <Link to="/chef">Chef</Link>
-          </li>
-        </ul> */}
         <Switch>
           <Route path="/chef">
             <ChefView />

@@ -6,7 +6,9 @@ import firebase from "../../firebase/Firebase";
 // import ItemPedido from './Item-pedido';
 
 
-const RenderOrder = () => {
+const RenderOrder = (props) => {
+    console.log(props.ordenesTraidas);
+
     console.log('componente Orden');
 
     const [renderPedido, setRenderPedido] = useState([]);
@@ -51,19 +53,24 @@ const RenderOrder = () => {
     }
 
     const pruebaFireAdd = () => {
-        return ref.add({
-            id: "1",
-            nombre: "La Rosalia",
-            cantidad: "",
-            precio: "5000",
-            adicionales: [{}],
-            observaciones: "",
-            editar: "true",
-            eliminar: "false"
+        const ordenesAEnviar = props.ordenesTraidas.map(orden => {
+            return {
+                cantidad: 1,
+                nombre: orden.nombre,
+                precio: orden.precio,
+
+            }
         });
+        return ref.add(
+            {
+                orden: ordenesAEnviar,
+                cliente: 'Sol',
+                mesa: '2',
+                id: 'od1'
+            }
+
+        );
     }
-
-
 
     useEffect(() => {
         pruebaFire();
@@ -101,13 +108,20 @@ const RenderOrder = () => {
                                 <th>PRECIO</th>
                                 <th></th>
                             </tr>
-                            <tr>
-                                <td><button className={styles.btnIcon}>Editar Pedido</button></td>
-                                <td>{itemIngresado}</td>
-                                <td>{cantidadItemIngresado}</td>
-                                <td>{precioItemIngresado}</td>
-                                <td><button className={styles.btnIcon}>Eliminar Pedido</button></td>
-                            </tr>
+                            {
+                                props.ordenesTraidas.map((orden) => {
+                                    return (
+                                        <tr key={orden.id}>
+                                            <td><button className={styles.btnIcon}>Editar Pedido</button></td>
+                                            <td>{orden.nombre}</td>
+                                            <td>{cantidadItemIngresado}</td>
+                                            <td>{orden.precio}</td>
+                                            <td><button className={styles.btnIcon}>Eliminar Pedido</button></td>
+                                        </tr>
+                                    );
+                                })
+                            }
+
                         </tbody>
                     </table>
                     <h2>Total: {totalPedidoIngresado} </h2>

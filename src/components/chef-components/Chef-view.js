@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Chef.module.css';
 import logo from '../../img/logo.png';
 import CurrentTime from './Fecha';
 
+import firebase from '../../firebase/Firebase';
+
 const ChefView = () => {
+  const [pedidos, setPedidos] = useState([]);
+  const ref = firebase.firestore().collection('ordenes');
+
+  const getOrder = () => {
+    ref.onSnapshot((querySnapshot) => {
+      console.log(querySnapshot.docs);
+      setPedidos(querySnapshot.docs);
+    })
+  };
+
+  useEffect(() => {
+    getOrder();
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.navBar}>
@@ -47,14 +63,22 @@ const ChefView = () => {
           </div>
         </div>
       </div>
-      <div className={styles.sectionPedidolisto}> <h2>Pedidos Recibidos</h2>
+      <div className={styles.sectionPedidolisto}><h2>Pedidos Recibidos</h2>
         <div className={styles.boxKitchen}>
           <div className={styles.numberAndtime}>
             Pedido #6
             14:00 hrs
           </div>
           <div className={styles.customerName}>
-            Amanda Diaz
+          {
+            pedidos.map(itemOrder=>{
+              return (
+                <div key={itemOrder.id}>
+                  {itemOrder.data().id}
+                </div>
+              )
+            })
+          }
           </div>
           <div className={styles.seeOrder}>
             <button className={styles.buttonSee}>Ver Pedido</button>
@@ -66,7 +90,6 @@ const ChefView = () => {
 
   );
 }
-
 
 
 export default ChefView;

@@ -2,7 +2,6 @@ import React from 'react';
 
 const CurrentTime = () => {
 
-
     let date = new Date();
 
     let day = date.getDate();
