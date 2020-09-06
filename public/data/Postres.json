@@ -7,22 +7,22 @@
         "vendidos": [],
         "precio": "5500",
         "url": "torta-de-chocolate",
-        "img": "./img/postre-1.jpg",        
+        "img": "./img/postre-1.jpg",
         "adicionales": [
             {
-                "crema chantilly": "",
+                "nombre": "crema chantilly",
                 "precio": "400"
             },
             {
-                "manjar": "",
+                "nombre": "manjar",
                 "precio": "300"
             },
             {
-                "frutilla": "",
+                "nombre": "frutilla",
                 "precio": "600"
             },
             {
-                "nutella": "",
+                "nombre": "nutella",
                 "precio": "500"
             }
         ],
@@ -39,23 +39,15 @@
         "img": "./img/postre-2.png",
         "adicionales": [
             {
-                "crema chantilly": "",
+                "nombre": "crema chantilly",
                 "precio": "400"
             },
             {
-                "manjar": "",
+                "nombre": "manjar",
                 "precio": "300"
             },
             {
-                "helado": [
-                    "vainilla",
-                    "frutilla",
-                    "chocolate"
-                ],
-                "precio": "800"
-            },
-            {
-                "nutella": "",
+                "nombre": "nutella",
                 "precio": "500"
             }
         ],
@@ -72,23 +64,15 @@
         "img": "./img/postre-3.png",
         "adicionales": [
             {
-                "crema chantilly": "",
+                "nombre": "crema chantilly",
                 "precio": "400"
             },
             {
-                "manjar": "",
+                "nombre": "manjar",
                 "precio": "300"
             },
             {
-                "helado": [
-                    "vainilla",
-                    "frutilla",
-                    "chocolate"
-                ],
-                "precio": "800"
-            },
-            {
-                "nutella": "",
+                "nombre": "nutella",
                 "precio": "500"
             }
         ],

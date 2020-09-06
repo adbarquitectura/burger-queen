@@ -1,34 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Waiter.module.css';
 import firebase from "../../firebase/Firebase";
+import AdicionalesComponent from './Adicionales';
 
 
 // import ItemPedido from './Item-pedido';
 
 
 const RenderOrder = (props) => {
-    console.log(props.ordenesTraidas);
-
-    console.log('componente Orden');
-
-    const [renderPedido, setRenderPedido] = useState([]);
 
     const [valorIngresado, setValorIngresado] = useState('');
 
     const [itemIngresado, setitemIngresado] = useState('La Rosalia');
-    const [cantidadItemIngresado, setcantidadItemIngresado] = useState('1');
-    const [precioItemIngresado, setprecioItemIngresado] = useState('5000');
+    const [cantidadItemIngresado, setcantidadItemIngresado] = useState(1);
+    const [precioItemIngresado, setprecioItemIngresado] = useState(5000);
     const [totalPedidoIngresado, settotalPedidoIngresado] = useState('');
 
-    const [editarItemIngresado, seteditarItemIngresadoo] = useState('false');
-    const [eliminarItemIngresado, seteliminarItemIngresado] = useState('false');
+    const [editarItemIngresado, seteditarItemIngresadoo] = useState(false);
+    const [eliminarItemIngresado, seteliminarItemIngresado] = useState(false);
 
-    const [nameClientIngresado, setnameClientIngresado] = useState([{
-        name: '',
-        mesa: ''
-    }]);
-    const [notasItemIngresado, setnotasItemIngresado] = useState('');
+    const [idPedido, setIdPedido] = useState('');
 
+    const [nameClientIngresado, setNameClientIngresado] = useState('');
+    const [tableClientIngresado, setTableClientIngresado] = useState('');
+
+    
+    const [ordenConAdicionales, setOrdenConAdicionales] = useState(null);
+    
 
     const ref = firebase.firestore().collection('ordenes');
 
@@ -36,9 +34,10 @@ const RenderOrder = (props) => {
         ref.onSnapshot((querySnapshot) => {
             // const items = [];
             querySnapshot.forEach((doc) => {
-                console.log(doc.data());
+                // console.log(doc.data());
             });
-            setValorIngresado('pedido #' + querySnapshot.docs.length);
+            const numeroPedidos = querySnapshot.docs.length;
+            setIdPedido('pedido #' + (numeroPedidos + 1));
         });
     }
 
@@ -56,17 +55,17 @@ const RenderOrder = (props) => {
         const ordenesAEnviar = props.ordenesTraidas.map(orden => {
             return {
                 cantidad: 1,
-                nombre: orden.nombre,
-                precio: orden.precio,
+                nombre: orden.nombreItem,
+                precio: orden.precioItem,
 
             }
         });
         return ref.add(
             {
                 orden: ordenesAEnviar,
-                cliente: 'Sol',
-                mesa: '2',
-                id: 'od1'
+                cliente: nameClientIngresado,
+                mesa: tableClientIngresado,
+                id: idPedido
             }
 
         );
@@ -78,26 +77,50 @@ const RenderOrder = (props) => {
 
     const btnEnviarPedido = () => {
         pruebaFireAdd().then(() => {
-            setValorIngresado('');
+            // setIdPedido('');
+            setTableClientIngresado('');
+            setNameClientIngresado('');
+            props.limpiarEstadoOrden();
+
             console.log('se limpio el input');
         })
         console.log('se envio');
     }
 
 
-    const captureValue = (event) => {
-        setValorIngresado(event.target.value);
-        console.log(valorIngresado);
+    const captureValueTable = (event) => {
+        setTableClientIngresado(event.target.value);
+    }
+
+    const captureValueClient = (event) => {
+        setNameClientIngresado(event.target.value);
+    }
+
+    
+    const eliminarItemPedido = (index) => {
+        props.eliminarItemPedido(index);
+    }
+
+    const limpiarInput = () => {
+        setTableClientIngresado('');
+        setNameClientIngresado('');
+        props.limpiarEstadoOrden();
+    }
+
+    const editarItemPedido = (orden) => {
+               
+        setOrdenConAdicionales(orden);
+    }
+
+    const actualizarAdicionales = (orden) => {
+        props.actualizarAdicionalesOrdenes(orden);
     }
 
     return (
         <div>
             <div className={styles.tabla}>
                 <h1>Pedidos</h1>
-                <div>
-                    {renderPedido}
 
-                </div>
                 <div>
                     <table>
                         <tbody>
@@ -109,14 +132,14 @@ const RenderOrder = (props) => {
                                 <th></th>
                             </tr>
                             {
-                                props.ordenesTraidas.map((orden) => {
+                                props.ordenesTraidas.map((orden, index) => {
                                     return (
-                                        <tr key={orden.id}>
-                                            <td><button className={styles.btnIcon}>Editar Pedido</button></td>
-                                            <td>{orden.nombre}</td>
+                                        <tr key={index}>
+                                            <td><button onClick={() => editarItemPedido(orden)} className={styles.btnIcon}>Editar Pedido</button></td>
+                                            <td>{orden.nombreItem}</td>
                                             <td>{cantidadItemIngresado}</td>
-                                            <td>{orden.precio}</td>
-                                            <td><button className={styles.btnIcon}>Eliminar Pedido</button></td>
+                                            <td>{orden.precioItem}</td>
+                                            <td><button onClick={() => eliminarItemPedido(index)} className={styles.btnIcon}>Eliminar Pedido</button></td>
                                         </tr>
                                     );
                                 })
@@ -130,17 +153,31 @@ const RenderOrder = (props) => {
 
             <div className={styles.sectionDatosCliente}>
                 <h2>Numero de Pedido:</h2>
-                <input className={styles.inputCliente} value={valorIngresado}></input>
+                <input
+                    className={styles.inputCliente}
+                    defaultValue={idPedido}
+                />
+                <h2>Mesa:</h2>
+                <input type="text"
+                    onChange={captureValueTable}
+                    className={styles.inputCliente}
+                    value={tableClientIngresado}
+                />
                 <h2>Cliente:</h2>
-                <input className={styles.inputCliente} value={nameClientIngresado.name}></input>
+                <input
+                    onChange={captureValueClient}
+                    className={styles.inputCliente}
+                    value={nameClientIngresado}
+                />
             </div>
             <div className={styles.sectionBtns}>
                 <button onClick={btnEnviarPedido}>Enviar Pedido</button>
-                <button className={styles.btnAlert}>Eliminar Pedido</button>
+                <button onClick={limpiarInput} className={styles.btnAlert}>Eliminar Pedido</button>
             </div>
-            <form>
-                <textarea className={styles.textarea} type="search" name="post" placeholder="Observaciones:"> </textarea>
-            </form>
+            <AdicionalesComponent 
+            actualizarAdicionales={actualizarAdicionales}
+            orden={ordenConAdicionales}
+            />
         </div>
     );
 }
