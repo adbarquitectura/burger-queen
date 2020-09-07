@@ -10,13 +10,14 @@ import editaPedido from '../../img/editarPedido.png';
 
 
 const RenderOrder = (props) => {
+    console.log(props.totalOrdenesTraidas);
 
     const [valorIngresado, setValorIngresado] = useState('');
 
     const [itemIngresado, setitemIngresado] = useState('La Rosalia');
     const [cantidadItemIngresado, setcantidadItemIngresado] = useState(1);
     const [precioItemIngresado, setprecioItemIngresado] = useState(5000);
-    const [totalPedidoIngresado, settotalPedidoIngresado] = useState('');
+    const [totalPedidoIngresado, setTotalPedidoIngresado] = useState(0);
 
     const [editarItemIngresado, seteditarItemIngresadoo] = useState(false);
     const [eliminarItemIngresado, seteliminarItemIngresado] = useState(false);
@@ -77,6 +78,15 @@ const RenderOrder = (props) => {
         pruebaFire();
     }, []);
 
+    useEffect(() => {
+        const reducer = (accumulator, currentValue) => accumulator + currentValue;
+        const totalOrden = props.totalOrdenesTraidas;
+        const suma = totalOrden.reduce(reducer);
+
+        setTotalPedidoIngresado(suma);
+    }, [props.totalOrdenesTraidas]);
+
+
     const btnEnviarPedido = () => {
         pruebaFireAdd().then(() => {
             // setIdPedido('');
@@ -107,15 +117,23 @@ const RenderOrder = (props) => {
         setTableClientIngresado('');
         setNameClientIngresado('');
         props.limpiarEstadoOrden();
+        setTotalPedidoIngresado(0);
     }
 
     const editarItemPedido = (orden) => {
-
         setOrdenConAdicionales(orden);
     }
 
     const actualizarAdicionales = (orden) => {
         props.actualizarAdicionalesOrdenes(orden);
+    }
+    //intento de actulizar total pedido
+    const actualizarTotalPedido = () => {
+        const totalPedido = props.ordenesTraidas.map(orden => {
+
+            return orden.precioItem++;
+        })
+        setTotalPedidoIngresado(totalPedido);
     }
 
     return (
@@ -151,7 +169,8 @@ const RenderOrder = (props) => {
 
                         </tbody>
                     </table>
-                    <h2>Total: {totalPedidoIngresado} </h2>
+
+                    < h2 > Total: {totalPedidoIngresado}</h2>
                 </div>
             </div>
 
@@ -182,7 +201,7 @@ const RenderOrder = (props) => {
                 actualizarAdicionales={actualizarAdicionales}
                 orden={ordenConAdicionales}
             />
-        </div>
+        </div >
     );
 }
 

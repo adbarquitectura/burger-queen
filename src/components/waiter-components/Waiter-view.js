@@ -12,6 +12,8 @@ const WaiterView = () => {
   const [showMenu, setShowMenu] = useState(true);
   const [ordenesPedidas, setOrdenesPedidas] = useState([]);
 
+  const [totalPedidoIngresado, setTotalPedidoIngresado] = useState([0]);
+
   const updatemenu = (name) => {
     setShowMenu(name);
   };
@@ -24,10 +26,14 @@ const WaiterView = () => {
       precioItem: ordenRecibida.precio
     };
     setOrdenesPedidas([...ordenesPedidas, orden]);
+
+    setTotalPedidoIngresado([...totalPedidoIngresado, ordenRecibida.precio]);
+
   };
 
   const limpiarEstadoOrden = () => {
     setOrdenesPedidas([]);
+    setTotalPedidoIngresado([0]);
   }
 
   const eliminarItemPedido = (indexAEliminar) => {
@@ -35,12 +41,18 @@ const WaiterView = () => {
       return index !== indexAEliminar;
     });
     setOrdenesPedidas(ordenesFiltradas);
+
+    const totalOrdenesFiltradas = ordenesFiltradas.map(orden => {
+      return orden.precioItem;
+    })
+    setTotalPedidoIngresado(totalOrdenesFiltradas);
   }
 
   const actualizarAdicionalesOrdenes = (adicionalesRecibidos) => {
     console.log(adicionalesRecibidos);
     // setOrdenesPedidas(adicionalesRecibidos);
   }
+  
 
   return (
     <div className={styles.container}>
@@ -73,6 +85,9 @@ const WaiterView = () => {
           limpiarEstadoOrden={limpiarEstadoOrden}
           eliminarItemPedido={eliminarItemPedido}
           actualizarAdicionalesOrdenes={actualizarAdicionalesOrdenes}
+
+          totalOrdenesTraidas={totalPedidoIngresado}
+
         />
       </div>
     </div >
