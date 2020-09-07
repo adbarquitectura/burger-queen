@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import styles from './Chef.module.css';
 import logo from '../../img/logo.png';
 import CurrentTime from './Fecha';
-
+import campana from '../../img/campana.png';
 import firebase from '../../firebase/Firebase';
-
 const ChefView = () => {
   const [pedidos, setPedidos] = useState([]);
   const ref = firebase.firestore().collection('ordenes');
+  const [count, setCount] = useState(0)
 
   const getOrder = () => {
     ref.onSnapshot((querySnapshot) => {
@@ -26,14 +26,14 @@ const ChefView = () => {
         <div>
           <img src={logo} className={styles.logo} alt="" />
         </div>
-        <nav className="links">
-          <ul>
-            <li><a href="/">Menú Principal</a></li>
-            <li><a href="/">Postres</a></li>
-          </ul>
-        </nav>
+        <span>{count}</span>
+        <button onClick={() => setCount(count + 1)}></button>
+        <div className={styles.bell} >
+          <img src={campana} className={styles.imgbell} alt=""></img>
+        </div>
         <div className={styles.fecha}>
-          <p>Pedro</p>
+          <div className={styles.customerName}>
+          </div>
           <CurrentTime />
         </div>
       </div>
@@ -70,15 +70,15 @@ const ChefView = () => {
             14:00 hrs
           </div>
           <div className={styles.customerName}>
-          {
-            pedidos.map(itemOrder=>{
-              return (
-                <div key={itemOrder.id}>
-                  {itemOrder.data().id}
-                </div>
-              )
-            })
-          }
+            {
+              pedidos.map(itemOrder => {
+                return (
+                  <div key={itemOrder.id}>
+                    {itemOrder.data().id}
+                  </div>
+                )
+              })
+            }
           </div>
           <div className={styles.seeOrder}>
             <button className={styles.buttonSee}>Ver Pedido</button>
