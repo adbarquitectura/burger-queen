@@ -149,11 +149,7 @@ button{
     display: block;
     
 }
-.btnAlert{
-    background-color: #FB5607;
-    color: white;
-}
-
+   
 .btnIcon{
     background-color: transparent;  
     border-color: transparent;
@@ -174,18 +170,6 @@ button{
      color:white;
  }
 
-.fecha{
-    color: #616161;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    display: block;   
-    margin: 250px auto 0 auto;
-}
-
-.tabla{
-
-}
 .sectionDatosCliente{
 display: block;
 }
@@ -194,24 +178,5 @@ display: block;
     /* background-color: tomato; */
 }
 
-.textarea {
-    font-family: "Open Sans", sans-serif;
-      /* padding-top: 1em; */
-      outline: none;
-      background: #fdfdf2 !important;
-      border-radius: 2em;
-      font-size: 13px;
-      text-align: center;
-      border-color: #00000029;
-      width: 200px;
-      height: 100px;
-      /* margin-top: 2em;
-      margin-left: 4em;
-      padding-right: 1em;
-      padding-left: 35px; */
-      text-align: center;
-      /* padding-block-end: 11px;
-      padding-block-start: 25px; */
-      cursor: pointer;
-  }
+
   

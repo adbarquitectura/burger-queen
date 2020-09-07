@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import styles from './Chef.module.css';
 import logo from '../../img/logo.png';
 import CurrentTime from './Fecha';
-
 import firebase from '../../firebase/Firebase';
+import BtnCerrarSesion from '../waiter-components/Button/Button';
 
 const ChefView = () => {
   const [pedidos, setPedidos] = useState([]);
   const ref = firebase.firestore().collection('ordenes');
 
   const getOrder = () => {
-    ref.onSnapshot((querySnapshot) => {
+    ref.orderBy('id', 'asc').onSnapshot((querySnapshot) => {
       console.log(querySnapshot.docs);
       setPedidos(querySnapshot.docs);
     })
@@ -32,10 +32,10 @@ const ChefView = () => {
             <li><a href="/">Postres</a></li>
           </ul>
         </nav>
-        <div className={styles.fecha}>
-          <p>Pedro</p>
+        <div>
           <CurrentTime />
         </div>
+        <BtnCerrarSesion />
       </div>
 
       <div className={styles.sectionPedido}>
@@ -66,22 +66,23 @@ const ChefView = () => {
       <div className={styles.sectionPedidolisto}><h2>Pedidos Recibidos</h2>
         <div className={styles.boxKitchen}>
           <div className={styles.numberAndtime}>
-            Pedido #6
-            14:00 hrs
+            {/* Pedido #6
+            14:00 hrs */}
           </div>
           <div className={styles.customerName}>
-          {
-            pedidos.map(itemOrder=>{
-              return (
-                <div key={itemOrder.id}>
-                  {itemOrder.data().id}
-                </div>
-              )
-            })
-          }
+            {
+              pedidos.map(itemOrder => {
+                return (
+                  <div key={itemOrder.id}>
+                    {itemOrder.data().id}
+                    <button className={styles.buttonSee}>Ver Pedido</button>
+                  </div>
+                )
+              })
+            }
           </div>
           <div className={styles.seeOrder}>
-            <button className={styles.buttonSee}>Ver Pedido</button>
+
           </div>
         </div>
 
