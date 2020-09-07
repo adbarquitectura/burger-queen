@@ -2,15 +2,18 @@ import React, { useState, useEffect } from 'react';
 import styles from './Chef.module.css';
 import logo from '../../img/logo.png';
 import CurrentTime from './Fecha';
-import campana from '../../img/campana.png';
+
 import firebase from '../../firebase/Firebase';
+import BtnCerrarSesion from '../waiter-components/Button/Button';
+import campana from '../../img/campana.png';
+
 const ChefView = () => {
   const [pedidos, setPedidos] = useState([]);
   const ref = firebase.firestore().collection('ordenes');
   const [count, setCount] = useState(0)
 
   const getOrder = () => {
-    ref.onSnapshot((querySnapshot) => {
+    ref.orderBy('id', 'asc').onSnapshot((querySnapshot) => {
       console.log(querySnapshot.docs);
       setPedidos(querySnapshot.docs);
     })
@@ -26,6 +29,7 @@ const ChefView = () => {
         <div>
           <img src={logo} className={styles.logo} alt="" />
         </div>
+
         <span>{count}</span>
         <button onClick={() => setCount(count + 1)}></button>
         <div className={styles.bell} >
@@ -36,6 +40,7 @@ const ChefView = () => {
           </div>
           <CurrentTime />
         </div>
+        <BtnCerrarSesion />
       </div>
 
       <div className={styles.sectionPedido}>
@@ -66,8 +71,8 @@ const ChefView = () => {
       <div className={styles.sectionPedidolisto}><h2>Pedidos Recibidos</h2>
         <div className={styles.boxKitchen}>
           <div className={styles.numberAndtime}>
-            Pedido #6
-            14:00 hrs
+            {/* Pedido #6
+            14:00 hrs */}
           </div>
           <div className={styles.customerName}>
             {
@@ -75,13 +80,16 @@ const ChefView = () => {
                 return (
                   <div key={itemOrder.id}>
                     {itemOrder.data().id}
+
+                    <button className={styles.buttonSee}>Ver Pedido</button>
+
                   </div>
                 )
               })
             }
           </div>
           <div className={styles.seeOrder}>
-            <button className={styles.buttonSee}>Ver Pedido</button>
+
           </div>
         </div>
 

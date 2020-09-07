@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './Waiter.module.css';
+import styles from './Adicionales.module.css';
 
 const AdicionalesComponent = (props) => {
     const [notasItemIngresado, setnotasItemIngresado] = useState('');
@@ -25,7 +25,7 @@ const AdicionalesComponent = (props) => {
                     return (
                         <div key={indice}>
                             <input
-                                onChange={()=> checkActivado(item)}
+                                onChange={() => checkActivado(item)}
                                 type="checkbox"
                                 name="adicionales"
                                 value={item.precio}

@@ -4,7 +4,9 @@ import logo from '../../img/logo.png';
 import ItemMenu from './Item-menu';
 import RenderOrder from './Render-order';
 import ItemPostres from './Item-postres';
-import CurrentTime from './Fecha';
+import CurrentTime from './Fecha/Fecha';
+import BtnCerrarSesion from './Button/Button';
+
 
 const WaiterView = () => {
   const [showMenu, setShowMenu] = useState(true);
@@ -26,6 +28,7 @@ const WaiterView = () => {
     setOrdenesPedidas([...ordenesPedidas, orden]);
 
     setTotalPedidoIngresado([...totalPedidoIngresado, ordenRecibida.precio]);
+
   };
 
   const limpiarEstadoOrden = () => {
@@ -62,10 +65,10 @@ const WaiterView = () => {
             <p onClick={() => updatemenu(true)}>Menú Principal</p>
             <p onClick={() => updatemenu(false)}>Postres</p>
           </div>
-          <div className={styles.fecha}>
-            <p>Pedro</p>
+          <div >
             <CurrentTime />
           </div>
+          <BtnCerrarSesion />
         </div>
       </div>
       <div className={styles.sectionMenu}>
@@ -84,6 +87,7 @@ const WaiterView = () => {
           actualizarAdicionalesOrdenes={actualizarAdicionalesOrdenes}
 
           totalOrdenesTraidas={totalPedidoIngresado}
+
         />
       </div>
     </div >

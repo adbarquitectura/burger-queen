@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Waiter.module.css';
 import firebase from "../../firebase/Firebase";
-import AdicionalesComponent from './Adicionales';
+import AdicionalesComponent from './Adicionales/Adicionales';
+import basurero from '../../img/basurero.png';
+import editaPedido from '../../img/editarPedido.png';
 
 
 // import ItemPedido from './Item-pedido';
@@ -153,11 +155,13 @@ const RenderOrder = (props) => {
                                 props.ordenesTraidas.map((orden, index) => {
                                     return (
                                         <tr key={index}>
-                                            <td><button onClick={() => editarItemPedido(orden)} className={styles.btnIcon}>Editar Pedido</button></td>
+                                            {/* <td><button onClick={() => editarItemPedido(orden)} className={styles.btnIcon}>Editar Pedido</button></td> */}
+                                            <td>  <img src={editaPedido} alt="" onClick={() => editarItemPedido(orden)} className={styles.btnIcon} /></td>
                                             <td>{orden.nombreItem}</td>
                                             <td>{cantidadItemIngresado}</td>
                                             <td>{orden.precioItem}</td>
-                                            <td><button onClick={() => eliminarItemPedido(index)} className={styles.btnIcon}>Eliminar Pedido</button></td>
+                                            {/* <td><button onClick={() => eliminarItemPedido(index)} className={styles.btnIcon}>Eliminar Pedido</button></td> */}
+                                            <td>  <img src={basurero} alt="" onClick={() => eliminarItemPedido(index)} className={styles.btnIcon} /></td>
                                         </tr>
                                     );
                                 })
