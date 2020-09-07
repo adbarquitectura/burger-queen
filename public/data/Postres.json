@@ -5,25 +5,25 @@
         "descripcion": "El malteada, merengada o milkshake elaborada a base de helado de frutilla y mantecado con mix de chocolate blanco.",
         "stock": "",
         "vendidos": [],
-        "precio": "5500",
+        "precio": 5500,
         "url": "torta-de-chocolate",
         "img": "./img/postre-1.jpg",
         "adicionales": [
             {
                 "nombre": "crema chantilly",
-                "precio": "400"
+                "precio": 400
             },
             {
                 "nombre": "manjar",
-                "precio": "300"
+                "precio": 300
             },
             {
                 "nombre": "frutilla",
-                "precio": "600"
+                "precio": 600
             },
             {
                 "nombre": "nutella",
-                "precio": "500"
+                "precio": 500
             }
         ],
         "observaciones": ""
@@ -34,21 +34,21 @@
         "descripcion": "Bizcocho de chocolate dark con relleno cremoso, acompañdo de helado de vainilla y crema chantilly.",
         "stock": "",
         "vendidos": [],
-        "precio": "4500",
+        "precio": 4500,
         "url": "torta-de-chocolate",
         "img": "./img/postre-2.png",
         "adicionales": [
             {
                 "nombre": "crema chantilly",
-                "precio": "400"
+                "precio": 400
             },
             {
                 "nombre": "manjar",
-                "precio": "300"
+                "precio": 300
             },
             {
                 "nombre": "nutella",
-                "precio": "500"
+                "precio": 500
             }
         ],
         "observaciones": ""
@@ -59,21 +59,21 @@
         "descripcion": "Crepe flambeada rellena con salsa Nutella y frutillas.",
         "stock": "",
         "vendidos": [],
-        "precio": "6000",
+        "precio": 6000,
         "url": "torta-de-chocolate",
         "img": "./img/postre-3.png",
         "adicionales": [
             {
                 "nombre": "crema chantilly",
-                "precio": "400"
+                "precio": 400
             },
             {
                 "nombre": "manjar",
-                "precio": "300"
+                "precio": 300
             },
             {
                 "nombre": "nutella",
-                "precio": "500"
+                "precio": 500
             }
         ],
         "observaciones": ""

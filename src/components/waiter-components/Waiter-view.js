@@ -10,6 +10,8 @@ const WaiterView = () => {
   const [showMenu, setShowMenu] = useState(true);
   const [ordenesPedidas, setOrdenesPedidas] = useState([]);
 
+  const [totalPedidoIngresado, setTotalPedidoIngresado] = useState([0]);
+
   const updatemenu = (name) => {
     setShowMenu(name);
   };
@@ -21,24 +23,33 @@ const WaiterView = () => {
       adicionalesItem: ordenRecibida.adicionales,
       precioItem: ordenRecibida.precio
     };
-    setOrdenesPedidas([...ordenesPedidas, orden]);    
+    setOrdenesPedidas([...ordenesPedidas, orden]);
+
+    setTotalPedidoIngresado([...totalPedidoIngresado, ordenRecibida.precio]);
   };
 
-  const limpiarEstadoOrden = ()=>{
+  const limpiarEstadoOrden = () => {
     setOrdenesPedidas([]);
+    setTotalPedidoIngresado([0]);
   }
 
-  const eliminarItemPedido= (indexAEliminar)=>{
-    const ordenesFiltradas = ordenesPedidas.filter((orden, index) =>{
+  const eliminarItemPedido = (indexAEliminar) => {
+    const ordenesFiltradas = ordenesPedidas.filter((orden, index) => {
       return index !== indexAEliminar;
     });
     setOrdenesPedidas(ordenesFiltradas);
+
+    const totalOrdenesFiltradas = ordenesFiltradas.map(orden => {
+      return orden.precioItem;
+    })
+    setTotalPedidoIngresado(totalOrdenesFiltradas);
   }
- 
-  const actualizarAdicionalesOrdenes = (adicionalesRecibidos) =>{
+
+  const actualizarAdicionalesOrdenes = (adicionalesRecibidos) => {
     console.log(adicionalesRecibidos);
     // setOrdenesPedidas(adicionalesRecibidos);
   }
+  
 
   return (
     <div className={styles.container}>
@@ -66,11 +77,13 @@ const WaiterView = () => {
         </div>
       </div>
       <div className={styles.sectionOrder}>
-        <RenderOrder 
-        ordenesTraidas={ordenesPedidas} 
-        limpiarEstadoOrden={limpiarEstadoOrden} 
-        eliminarItemPedido={eliminarItemPedido}
-        actualizarAdicionalesOrdenes={actualizarAdicionalesOrdenes}
+        <RenderOrder
+          ordenesTraidas={ordenesPedidas}
+          limpiarEstadoOrden={limpiarEstadoOrden}
+          eliminarItemPedido={eliminarItemPedido}
+          actualizarAdicionalesOrdenes={actualizarAdicionalesOrdenes}
+
+          totalOrdenesTraidas={totalPedidoIngresado}
         />
       </div>
     </div >

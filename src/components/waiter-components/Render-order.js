@@ -8,13 +8,14 @@ import AdicionalesComponent from './Adicionales';
 
 
 const RenderOrder = (props) => {
+    console.log(props.totalOrdenesTraidas);
 
     const [valorIngresado, setValorIngresado] = useState('');
 
     const [itemIngresado, setitemIngresado] = useState('La Rosalia');
     const [cantidadItemIngresado, setcantidadItemIngresado] = useState(1);
     const [precioItemIngresado, setprecioItemIngresado] = useState(5000);
-    const [totalPedidoIngresado, settotalPedidoIngresado] = useState('');
+    const [totalPedidoIngresado, setTotalPedidoIngresado] = useState(0);
 
     const [editarItemIngresado, seteditarItemIngresadoo] = useState(false);
     const [eliminarItemIngresado, seteliminarItemIngresado] = useState(false);
@@ -24,9 +25,9 @@ const RenderOrder = (props) => {
     const [nameClientIngresado, setNameClientIngresado] = useState('');
     const [tableClientIngresado, setTableClientIngresado] = useState('');
 
-    
+
     const [ordenConAdicionales, setOrdenConAdicionales] = useState(null);
-    
+
 
     const ref = firebase.firestore().collection('ordenes');
 
@@ -75,6 +76,15 @@ const RenderOrder = (props) => {
         pruebaFire();
     }, []);
 
+    useEffect(() => {
+        const reducer = (accumulator, currentValue) => accumulator + currentValue;
+        const totalOrden = props.totalOrdenesTraidas;
+        const suma = totalOrden.reduce(reducer);
+
+        setTotalPedidoIngresado(suma);
+    }, [props.totalOrdenesTraidas]);
+
+
     const btnEnviarPedido = () => {
         pruebaFireAdd().then(() => {
             // setIdPedido('');
@@ -96,7 +106,7 @@ const RenderOrder = (props) => {
         setNameClientIngresado(event.target.value);
     }
 
-    
+
     const eliminarItemPedido = (index) => {
         props.eliminarItemPedido(index);
     }
@@ -105,15 +115,23 @@ const RenderOrder = (props) => {
         setTableClientIngresado('');
         setNameClientIngresado('');
         props.limpiarEstadoOrden();
+        setTotalPedidoIngresado(0);
     }
 
     const editarItemPedido = (orden) => {
-               
         setOrdenConAdicionales(orden);
     }
 
     const actualizarAdicionales = (orden) => {
         props.actualizarAdicionalesOrdenes(orden);
+    }
+    //intento de actulizar total pedido
+    const actualizarTotalPedido = () => {
+        const totalPedido = props.ordenesTraidas.map(orden => {
+
+            return orden.precioItem++;
+        })
+        setTotalPedidoIngresado(totalPedido);
     }
 
     return (
@@ -147,7 +165,8 @@ const RenderOrder = (props) => {
 
                         </tbody>
                     </table>
-                    <h2>Total: {totalPedidoIngresado} </h2>
+
+                    < h2 > Total: {totalPedidoIngresado}</h2>
                 </div>
             </div>
 
@@ -174,11 +193,11 @@ const RenderOrder = (props) => {
                 <button onClick={btnEnviarPedido}>Enviar Pedido</button>
                 <button onClick={limpiarInput} className={styles.btnAlert}>Eliminar Pedido</button>
             </div>
-            <AdicionalesComponent 
-            actualizarAdicionales={actualizarAdicionales}
-            orden={ordenConAdicionales}
+            <AdicionalesComponent
+                actualizarAdicionales={actualizarAdicionales}
+                orden={ordenConAdicionales}
             />
-        </div>
+        </div >
     );
 }
 
