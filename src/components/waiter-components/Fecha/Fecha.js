@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Fecha.module.css'
 
+
 const CurrentTime = () => {
 
     let date = new Date();
@@ -14,7 +15,7 @@ const CurrentTime = () => {
 
     return (
         <div className={styles.fecha}>
-            <p>Pedro</p>
+            <p></p>
             <p>{day}/{month}/{year}, {hours}:{minutes}hrs</p>
         </div>
 
