@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Waiter.module.css';
 import logo from '../../img/logo.png';
 import ItemMenu from './Item-menu';
@@ -17,6 +17,19 @@ const WaiterView = () => {
 
   const [totalPedidoIngresado, setTotalPedidoIngresado] = useState([0]);
 
+  const refListas = firebase.firestore().collection('ordenesListas');
+
+  const getOrdenesListas = () => {
+    refListas.onSnapshot((querySnapshot) => {
+      console.log(querySnapshot.docs.length)
+     setCountPedido(querySnapshot.docs.length);     
+    })
+  };
+  
+  useEffect(()=>{
+    getOrdenesListas();
+  }, []);
+  
   const updatemenu = (name) => {
     setShowMenu(name);
   };
@@ -69,8 +82,7 @@ const WaiterView = () => {
             <p onClick={() => updatemenu(false)}>Postres</p>
           </div>
           <div>
-            <span>{countPedido}</span>
-            <button onClick={() => setCountPedido(countPedido + 1)}></button>
+            <span>{countPedido}</span>            
             <div className={styles.bell} >
               <img src={campana} className={styles.imgbell} alt=""></img>
             </div>

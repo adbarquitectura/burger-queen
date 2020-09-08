@@ -35,7 +35,7 @@ const ChefView = () => {
   }, []);
 
   const deleteOrden = (ordenId) => {
-    return ref         
+    return ref
       .doc(ordenId)
       .delete()
       .then(function () {
@@ -46,11 +46,7 @@ const ChefView = () => {
   };
 
   const enviarPedidoListo = (pedido, ordenado, orden) => {
-    console.log('se envio pedido');
-    console.log(ordenado);
-    console.log(pedido);
-    console.log(orden.id);
-
+  
     const filltroPedidosEjecutados = detallePedidos.filter(pedidoListo => {
       pedidoListo = pedidoListo.data().id;
       return pedidoListo !== pedido;
@@ -92,7 +88,7 @@ const ChefView = () => {
                     return (
                       item.map((element, indiceA) => {
                         return (
-                          <div key={indice}>
+                          <div>
                             <p>{element.nombre}</p>
                             <p>{element.cantidad}</p>
                           </div>
