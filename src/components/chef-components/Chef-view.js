@@ -9,6 +9,7 @@ import campana from '../../img/campana.png';
 
 const ChefView = () => {
   const ref = firebase.firestore().collection('ordenes');
+  const refListas = firebase.firestore().collection('ordenesListas');
 
   const [count, setCount] = useState(0);
 
@@ -24,9 +25,41 @@ const ChefView = () => {
     })
   };
 
+  const agregarOrdenLista = (ordenEntregada) => {
+    refListas.add({ ordenEntregada });
+  }
+
+
   useEffect(() => {
     getOrder();
   }, []);
+
+  const deleteOrden = (ordenId) => {
+    return ref         
+      .doc(ordenId)
+      .delete()
+      .then(function () {
+        console.log("Document successfully deleted!");
+      }).catch(function (error) {
+        console.error("Error removing document: ", error);
+      });
+  };
+
+  const enviarPedidoListo = (pedido, ordenado, orden) => {
+    console.log('se envio pedido');
+    console.log(ordenado);
+    console.log(pedido);
+    console.log(orden.id);
+
+    const filltroPedidosEjecutados = detallePedidos.filter(pedidoListo => {
+      pedidoListo = pedidoListo.data().id;
+      return pedidoListo !== pedido;
+    });
+
+    agregarOrdenLista(ordenado);
+    deleteOrden(orden.id);
+    setDetallePedidos(filltroPedidosEjecutados);
+  }
 
   return (
     <div className={styles.container}>
@@ -50,18 +83,14 @@ const ChefView = () => {
 
       <div className={styles.sectionPedido}>
         {
-          detallePedidos.map((orden, indice) => {
-            /* console.log(detallePedidos);
-            console.log(orden.data()); */
+          detallePedidos.map((ordenes, indice) => {
             return (
               <div key={indice}>
                 <div>
-                  <p>{orden.data().id}</p>
-                  {[orden.data().orden].map(item => {
-                    // console.log(item)
+                  <p>{ordenes.data().id}</p>
+                  {[ordenes.data().orden].map(item => {
                     return (
-                      item.map((element, indice) => {
-                        // console.log(element.nombre);
+                      item.map((element, indiceA) => {
                         return (
                           <div key={indice}>
                             <p>{element.nombre}</p>
@@ -75,7 +104,7 @@ const ChefView = () => {
                 </div>
                 <div className={styles.buttonKitchen}>
                   <button className={styles.botonCocina}>En Proceso</button>
-                  <button className={styles.botonCocina}>Listo</button>
+                  <button onClick={() => enviarPedidoListo((ordenes.data().id), (ordenes.data()), ordenes)} className={styles.botonCocina}>Listo</button>
                 </div>
               </div>
             )
@@ -85,10 +114,7 @@ const ChefView = () => {
 
       <div className={styles.sectionPedidolisto}><h2>Pedidos Recibidos</h2>
         <div className={styles.boxKitchen}>
-          <div className={styles.numberAndtime}>
-            {/* Pedido #6
-            14:00 hrs */}
-          </div>
+          <div className={styles.numberAndtime}></div>
           <div className={styles.customerName}>
             {
               pedidos.map(itemOrder => {
