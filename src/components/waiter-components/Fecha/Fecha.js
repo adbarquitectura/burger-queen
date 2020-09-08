@@ -15,7 +15,6 @@ const CurrentTime = () => {
 
     return (
         <div className={styles.fecha}>
-            <p></p>
             <p>{day}/{month}/{year}, {hours}:{minutes}hrs</p>
         </div>
 

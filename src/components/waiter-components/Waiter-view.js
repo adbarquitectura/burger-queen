@@ -87,14 +87,13 @@ const WaiterView = () => {
               <img src={campana} className={styles.imgbell} alt=""></img>
             </div>
           </div>
-          <div >
+          <div className={styles.fecha}>
             <CurrentTime />
           </div>
           <BtnCerrarSesion />
         </div>
       </div>
       <div className={styles.sectionMenu}>
-        <div className={styles.barra}></div>
         <div className={styles.sectionMenu}>
           {
             showMenu ? <ItemMenu enviarOrdenes={actualizaEstadoOrden} /> : <ItemPostres enviarOrdenes={actualizaEstadoOrden} />
