@@ -68,7 +68,7 @@ const ChefView = () => {
           <img src={logo} className={styles.logo} alt="" />
         </div>
 
-        <div>
+        <div className={styles.countbell}>
           <span>{count}</span>
           <div className={styles.bell}>
             <img src={campana} className={styles.imgbell} alt=""></img>

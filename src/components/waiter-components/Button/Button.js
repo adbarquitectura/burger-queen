@@ -8,7 +8,7 @@ import {
 const BtnCerrarSesion = () => {
 
     return (
-        <div >
+        <div className={styles.buttoncerrar}>
               <button className={styles.button}><Link to="/">Cerrar Sesión</Link></button>
         </div>
 
