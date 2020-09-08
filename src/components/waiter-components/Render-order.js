@@ -10,8 +10,7 @@ import editaPedido from '../../img/editarPedido.png';
 
 
 const RenderOrder = (props) => {
-    console.log(props.totalOrdenesTraidas);
-
+    
     const [valorIngresado, setValorIngresado] = useState('');
 
     const [itemIngresado, setitemIngresado] = useState('La Rosalia');
@@ -78,12 +77,13 @@ const RenderOrder = (props) => {
         pruebaFire();
     }, []);
 
+    //Se actualiza total pedido
     useEffect(() => {
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
         const totalOrden = props.totalOrdenesTraidas;
-        const suma = totalOrden.reduce(reducer);
+        const sumaTotalOrdenes = totalOrden.reduce(reducer);
 
-        setTotalPedidoIngresado(suma);
+        setTotalPedidoIngresado(sumaTotalOrdenes);
     }, [props.totalOrdenesTraidas]);
 
 
@@ -94,7 +94,6 @@ const RenderOrder = (props) => {
             setNameClientIngresado('');
             props.limpiarEstadoOrden();
 
-            console.log('se limpio el input');
         })
         console.log('se envio');
     }
@@ -127,15 +126,7 @@ const RenderOrder = (props) => {
     const actualizarAdicionales = (orden) => {
         props.actualizarAdicionalesOrdenes(orden);
     }
-    //intento de actulizar total pedido
-    const actualizarTotalPedido = () => {
-        const totalPedido = props.ordenesTraidas.map(orden => {
-
-            return orden.precioItem++;
-        })
-        setTotalPedidoIngresado(totalPedido);
-    }
-
+    
     return (
         <div>
             <div className={styles.tabla}>

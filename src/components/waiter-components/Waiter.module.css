@@ -177,6 +177,14 @@ display: block;
     margin-bottom: 0;
     /* background-color: tomato; */
 }
-
+.bell{
+    margin-top:100px;
+    width:100%;
+    margin-left: 50px;
+    }
+    
+    .imgbell{
+    width: 50%;
+    }    
 
   

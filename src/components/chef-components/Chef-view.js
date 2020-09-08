@@ -8,14 +8,19 @@ import BtnCerrarSesion from '../waiter-components/Button/Button';
 import campana from '../../img/campana.png';
 
 const ChefView = () => {
-  const [pedidos, setPedidos] = useState([]);
   const ref = firebase.firestore().collection('ordenes');
-  const [count, setCount] = useState(0)
+
+  const [count, setCount] = useState(0);
+
+  const [pedidos, setPedidos] = useState([]);
+  const [detallePedidos, setDetallePedidos] = useState([]);
 
   const getOrder = () => {
     ref.orderBy('id', 'asc').onSnapshot((querySnapshot) => {
-      console.log(querySnapshot.docs);
+      // console.log(querySnapshot.docs.length);      
       setPedidos(querySnapshot.docs);
+      setCount(querySnapshot.docs.length);
+      setDetallePedidos(querySnapshot.docs);
     })
   };
 
@@ -30,44 +35,54 @@ const ChefView = () => {
           <img src={logo} className={styles.logo} alt="" />
         </div>
 
-        <span>{count}</span>
-        <button onClick={() => setCount(count + 1)}></button>
-        <div className={styles.bell} >
-          <img src={campana} className={styles.imgbell} alt=""></img>
-        </div>
-        <div className={styles.fecha}>
-          <div className={styles.customerName}>
+        <div>
+          <span>{count}</span>
+          <div className={styles.bell}>
+            <img src={campana} className={styles.imgbell} alt=""></img>
           </div>
+        </div>
+
+        <div className={styles.fecha}>
           <CurrentTime />
         </div>
         <BtnCerrarSesion />
       </div>
 
       <div className={styles.sectionPedido}>
-        <div className={styles.cajaPedido}>
-          <div className={styles.pedidoitems}>
-            <div className={styles.items}>Items
-           <div>
-                Jlo
-                Maluna
-            </div>
-            </div>
-            <div className={styles.cantidad}>Cantidad
-             <div>
-                1
-            </div>
-            </div>
-            <div className={styles.observaciones}>observaciones
-             <div>Sin Rocineta, ni jamon
-             </div>
-            </div>
-          </div>
-          <div className={styles.buttonKitchen}>
-            <button className={styles.botonCocina}>En Proceso</button>
-            <button className={styles.botonCocina}>Listo</button>
-          </div>
-        </div>
+        {
+          detallePedidos.map((orden, indice) => {
+            /* console.log(detallePedidos);
+            console.log(orden.data()); */
+            return (
+              <div key={indice}>
+                <div>
+                  <p>{orden.data().id}</p>
+                  {[orden.data().orden].map(item => {
+                    // console.log(item)
+                    return (
+                      item.map((element, indice) => {
+                        // console.log(element.nombre);
+                        return (
+                          <div key={indice}>
+                            <p>{element.nombre}</p>
+                            <p>{element.cantidad}</p>
+                          </div>
+                        )
+                      })
+                    )
+                  })
+                  }
+                </div>
+                <div className={styles.buttonKitchen}>
+                  <button className={styles.botonCocina}>En Proceso</button>
+                  <button className={styles.botonCocina}>Listo</button>
+                </div>
+              </div>
+            )
+          })
+        }
       </div>
+
       <div className={styles.sectionPedidolisto}><h2>Pedidos Recibidos</h2>
         <div className={styles.boxKitchen}>
           <div className={styles.numberAndtime}>
@@ -80,16 +95,11 @@ const ChefView = () => {
                 return (
                   <div key={itemOrder.id}>
                     {itemOrder.data().id}
-
-                    <button className={styles.buttonSee}>Ver Pedido</button>
-
+                    {/* <button className={styles.buttonSee}>Ver Pedido</button> */}
                   </div>
                 )
               })
             }
-          </div>
-          <div className={styles.seeOrder}>
-
           </div>
         </div>
 

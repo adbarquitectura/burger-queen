@@ -1,6 +1,6 @@
 [
     {
-        "id": "1",
+        "id": 1,
         "nombre": "La Rosalia",
         "descripcion": "Hamburguesa tipo sándwich hecho a base de carne molida con mezcla se chorizo español y notas mediterráneas",
         "stock": "",
@@ -29,7 +29,7 @@
         "observaciones": ""
     },
     {
-        "id": "2",
+        "id": 2,
         "nombre": "JBalvin",
         "descripcion": "Hamburguesa con carne hecha con chorizo sudado, huevo y notas caribeñas",
         "stock": "",
@@ -58,7 +58,7 @@
         "observaciones": ""
     },
     {
-        "id": "3",
+        "id": 3,
         "nombre": "Jlo",
         "descripcion": "sándwich relleno de penil de cerdo acompañado de una salsa con ajo, aceite de oliva, orégano, jugo de limón y vinagre",
         "stock": "",
@@ -87,7 +87,7 @@
         "observaciones": ""
     },
     {
-        "id": "4",
+        "id": 4,
         "nombre": "Bab Bunny",
         "descripcion": "Hamburguesa especial, hecha con carne de Mero, tocino, queso mantecoso",
         "vendidos": "",
@@ -115,7 +115,7 @@
         "observaciones": ""
     },
     {
-        "id": "5",
+        "id": 5,
         "nombre": "Anitta",
         "descripcion": "Tiras de tocino crujientes, queso crema, carne fresca de vacuno y lechuga, tomate, cebolla morada, pepinillo, mayo, ketchup y mostaza ",
         "stock": "",
@@ -143,7 +143,7 @@
         "observaciones": ""
     },
     {
-        "id": "6",
+        "id": 6,
         "nombre": "Ricky Martin",
         "descripcion": "Hamburguesa vegetariana a elección (thai, garbanzos, porotos o lentejas), lechuga, tomate, cebolla morada, pepinillo, mayo, ketchup y mostaza colocados sobre un pan suave y ligeramente tostado en el interi ",
         "stock": "",
@@ -172,7 +172,7 @@
         "observaciones": ""
     },
     {
-        "id": "7",
+        "id": 7,
         "nombre": "Papas cnco",
         "descripcion": "Tipicas papas francesas",
         "stock": "",
@@ -201,7 +201,7 @@
         "observaciones": ""
     },
     {
-        "id": "8",
+        "id": 8,
         "nombre": "Papas Axé Bahía",
         "descripcion": "Papas fritas con topping de queso cheddar y tocino",
         "stock": "",
@@ -230,7 +230,7 @@
         "observaciones": ""
     },
     {
-        "id": "9",
+        "id": 9,
         "nombre": "Papas Los Prisioneros",
         "descripcion": "Papas fritas con topping de queso cheddar y tocino",
         "stock": "",
@@ -259,7 +259,7 @@
         "observaciones": ""
     },
     {
-        "id": "10",
+        "id": 10,
         "nombre": "Agua mineral 350ml",
         "descripcion": "Agua mineral",
         "vendidos": "",
@@ -273,7 +273,7 @@
         "observaciones": ""
     },
     {
-        "id": "11",
+        "id": 11,
         "nombre": "Gaseosas",
         "descripcion": "Bebida con gas",
         "stock": "",
@@ -290,7 +290,7 @@
         "observaciones": ""
     },
     {
-        "id": "12",
+        "id": 12,
         "nombre": "Cerveza",
         "descripcion": "Bebida alcohólica de sabor amargo y color amarillento, más o menos oscuro, que se obtiene por fermentación de la cebada y se aromatiza con lúpulo.",
         "stock": "",

@@ -1,6 +1,6 @@
 [
     {
-        "id": "1",
+        "id": 1,
         "nombre": "Paloma Mami",
         "descripcion": "El malteada, merengada o milkshake elaborada a base de helado de frutilla y mantecado con mix de chocolate blanco.",
         "stock": "",
@@ -29,7 +29,7 @@
         "observaciones": ""
     },
     {
-        "id": "2",
+        "id": 2,
         "nombre": "Beyonce",
         "descripcion": "Bizcocho de chocolate dark con relleno cremoso, acompañdo de helado de vainilla y crema chantilly.",
         "stock": "",
@@ -54,7 +54,7 @@
         "observaciones": ""
     },
     {
-        "id": "3",
+        "id": 3,
         "nombre": "Maluma",
         "descripcion": "Crepe flambeada rellena con salsa Nutella y frutillas.",
         "stock": "",

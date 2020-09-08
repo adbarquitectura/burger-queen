@@ -7,10 +7,13 @@ import ItemPostres from './Item-postres';
 import CurrentTime from './Fecha/Fecha';
 import BtnCerrarSesion from './Button/Button';
 
+import firebase from '../../firebase/Firebase';
+import campana from '../../img/campana.png';
 
 const WaiterView = () => {
   const [showMenu, setShowMenu] = useState(true);
   const [ordenesPedidas, setOrdenesPedidas] = useState([]);
+  const [countPedido, setCountPedido] = useState(0);
 
   const [totalPedidoIngresado, setTotalPedidoIngresado] = useState([0]);
 
@@ -52,7 +55,7 @@ const WaiterView = () => {
     console.log(adicionalesRecibidos);
     // setOrdenesPedidas(adicionalesRecibidos);
   }
-  
+
 
   return (
     <div className={styles.container}>
@@ -64,6 +67,13 @@ const WaiterView = () => {
           <div className={styles.datosPersonalizados}>
             <p onClick={() => updatemenu(true)}>Menú Principal</p>
             <p onClick={() => updatemenu(false)}>Postres</p>
+          </div>
+          <div>
+            <span>{countPedido}</span>
+            <button onClick={() => setCountPedido(countPedido + 1)}></button>
+            <div className={styles.bell} >
+              <img src={campana} className={styles.imgbell} alt=""></img>
+            </div>
           </div>
           <div >
             <CurrentTime />
