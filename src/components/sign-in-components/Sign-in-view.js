@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Sign-in.module.css';
 
 import {
   Link
 } from "react-router-dom";
 
+import UserName from './Nombre';
+
 const SignInView = () => {
+
+
   return (
     <div className={styles.container}>
       <div className={styles.imglogin}>
@@ -15,9 +19,7 @@ const SignInView = () => {
         <div className={styles.logosignin}>
           <img src="img/logo.png" className={styles.logo} alt="" />
         </div>
-        <div>
-          <input type="text"></input>
-        </div>
+        <UserName/>
         <div>
           <div className={styles.buttonlink}><Link to="/waiter">Waiter</Link></div>
           <div className={styles.buttonlink}><Link to="/chef">Chef</Link></div>
