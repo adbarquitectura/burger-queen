@@ -1,34 +1,40 @@
-.container{
+.container {
+    display: flex;
+    flex-flow: row;
     background-color: transparent;
     display: flex;
-    height: 100%;
+    width: 100%;
+    background-color: #F0EFEB;
 }
-.logo{
+
+.logo {
     width: 100px;
-    height: auto;
     margin: 20px auto auto auto;
     padding: 12px;
     align-items: center;
-    box-sizing: border-box;
     margin-bottom: 150px;
 }
-.navBar{
+
+.navBar {
     display: flex;
-    flex-flow: column ;
+    flex-flow: column;
     background-color: #FCBF49;
     width: 20%;
     padding-left: 5px;
     align-items: center;
 }
-.sectionPedido{
-  display: flex;
-  flex-flow: column;
-  width: 60%;
-  align-items: center;
-  height: 100%;
+
+.sectionPedido {
+    display: flex;
+    flex-flow: column;
+    width: 60%;
+    align-items: center;
+    height: 100%;    
+    line-height: 5px;
+    padding-top: 10px;
 }
 
-.sectionPedidolisto{
+.sectionPedidolisto {
     display: flex;
     flex-flow: column;
     background-color: #616161;
@@ -36,101 +42,118 @@
     padding: 10px;
     box-sizing: border-box;
     align-items: center;
-
-}
-h3{
-    margin: 5px;
-    font-size: 15px;}
-
-.cajaPedido{
-display: flex;
-flex-flow: column;
-width:90%;
-align-items: center;
-align-content: center;
-margin-top:30px;
-border: solid gray 3px;
-border-radius: 10px; 
-
-
 }
 
-.pedidoitems{
-display: flex;
-flex-flow: row;
-align-items: center;
-width:90%;
+.sectionItemPedido{    
+    line-height: 2px;
+    border: solid 1px black;
+    border-radius: 10px;    
+    margin: 10px auto 10px auto;
+    background-color: white;
 }
-.items{
-text-align: center;
-
-
-}
-
-
-.cantidad{
-align-items: center;
-text-align: center;
-
-}
-
-.observaciones{
-align-items: center;
-text-align: center;
-margin-left: 30%;
-}
-
-.buttonKitchen{
-margin-top: 20px;
-margin-bottom: 10px;
-
-
-
-}
-.boxKitchen{
-display: flex;
-flex-flow: row;
-align-content: center;
-border-radius: 5px;
-border: solid white 3px;
-width: 100%;
-
-}
-.buttonSee{
-width: 90%;
-background-color: rgba(251, 86, 7, 1) ;
-}
-.seeOrder{
-flex: 1 1;
-}
-.numberAndtime{
-flex: 1 1;
-margin-left: 10px;   
-}
-
-.customerName{
-flex: 1 1;   
-} 
-.fecha{    
-color: #616161;
-font-family: Arial, Helvetica, sans-serif;
-font-size: 18px;
-font-weight: 500;
-display: block;   
-margin: 100px auto 0 auto;
-text-align: center;
-}
-.bell{
-margin-top:20px;
-width:100%;
-}
+.boxItemPedido{
+    line-height: 2px;
     
-.imgbell{
-width: 50%;
+    /* border: solid 1px green; */
+    margin: 20px;
+    
 }
-.countbell{
-margin-bottom: 70px;
-width:100%;
-align-items: center;
-text-align: center;
-} 
+.sectionItem{
+    /* border: solid 1px blue;   */
+}
+
+h3 {
+    margin: 5px;
+    font-size: 15px;
+}
+
+.cajaPedido {
+    display: flex;
+    flex-flow: column;
+    width: 90%;
+    align-items: center;
+    align-content: center;
+    margin-top: 30px;
+    border: solid gray 3px;
+    border-radius: 10px;
+}
+
+.pedidoitems {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    width: 90%;
+}
+
+.items {
+    text-align: center;
+}
+
+.cantidad {
+    align-items: center;
+    text-align: center;
+}
+
+.observaciones {
+    align-items: center;
+    text-align: center;
+    margin-left: 30%;
+}
+
+.buttonKitchen {
+    margin: 5px auto 5px auto;
+}
+
+.boxKitchen {
+    display: flex;
+    flex-flow: row;
+    align-content: center;
+    border-radius: 5px;
+    border: solid white 3px;
+    width: 100%;
+}
+
+.buttonSee {
+    width: 90%;
+    background-color: rgba(251, 86, 7, 1);
+}
+
+.seeOrder {
+    flex: 1 1;
+}
+
+.numberAndtime {
+    flex: 1 1;
+    margin-left: 10px;
+}
+
+.customerName {
+    flex: 1 1;
+}
+
+.fecha {
+    color: #616161;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    margin: 100px auto 0 auto;
+    text-align: center;
+}
+
+.bell {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.imgbell {
+    width: 35%;
+}
+
+.countbell {
+    margin-bottom: 70px;
+    width: 100%;
+    font-size: 18px;
+    align-items: center;
+    text-align: center;
+}

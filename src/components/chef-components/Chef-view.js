@@ -76,19 +76,20 @@ const ChefView = () => {
         </div>
         <BtnCerrarSesion />
       </div>
-
+      
       <div className={styles.sectionPedido}>
+        
         {
           detallePedidos.map((ordenes, indice) => {
             return (
-              <div key={indice}>
-                <div>
-                  <p>{ordenes.data().id}</p>
+              <div key={indice} className={styles.sectionItemPedido}>
+                <div className={styles.boxItemPedido}>
+                  <p><strong>{ordenes.data().id}</strong></p>
                   {[ordenes.data().orden].map(item => {
                     return (
                       item.map((element, indiceA) => {
                         return (
-                          <div>
+                          <div className={styles.sectionItem}>
                             <p>{element.nombre}</p>
                             <p>{element.cantidad}</p>
                           </div>
