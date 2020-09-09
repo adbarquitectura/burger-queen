@@ -92,7 +92,8 @@ const ChefView = () => {
                     return (
                       item.map((element, indiceA) => {
                         return (
-                          <div className={styles.sectionItem}>
+                          <div key={indiceA}
+                          className={styles.sectionItem}>
                             <p>{element.nombre} {element.cantidad}</p>                            
                           </div>
                         )
