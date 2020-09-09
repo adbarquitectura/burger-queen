@@ -81,7 +81,7 @@ const WaiterView = () => {
             <p onClick={() => updatemenu(true)}>Menú Principal</p>
             <p onClick={() => updatemenu(false)}>Postres</p>
           </div>
-          <div>
+          <div className={styles.countbell}>
             <span>{countPedido}</span>            
             <div className={styles.bell} >
               <img src={campana} className={styles.imgbell} alt=""></img>
