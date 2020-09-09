@@ -1,68 +1,129 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ 
+  ![Logo](./src/img/logo-readme.png)
+ 
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## [Link para pagina web ]()
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **Índice**
 
-### `npm run build`
+* [1. Resumen del proyecto](#1-resumen-del-proyecto)
+* [2. Resumen del producto](#2-resumen-del-producto)
+* [3. Planificación](#3-planificacion)
+* [4. Proceso UX/ UI](#4-proceso-de-ux)
+* [5. Feedback](#5-feedback)
+* [6. Pagina web Finalizada](#7-checklist)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **1. Resumen del proyecto**
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+La interfaz debe mostrar dos menús, cada uno con todos sus productos. El usuario debe poder ir eligiendo qué productos agregar y la interfaz debe ir mostrando el resumen del pedido con el costo total.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **2. Resumen del producto**
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **3. Planificación**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Empezamos a planificar todo lo que seria necesario para el desarrollo de la página web utilizando el **Trello**, donde nos permitió una mejor visualización de todas las etapas necesarias, y dividimos las tareas por sprint.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![imagen-Trello]()
 
-## Learn More
+### **4. Proceso UX/ UI**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ Basado en ideas de las colaboradoras, creamos nuestro sketch, hecho en papel y lapis.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![imagen-sketch]()
 
-### Code Splitting
+![imagen-planificación]()
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+ ##### Definición de usuario
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+##### Historias de Usuarios
+
+*Historia de usuario 1*: Mesero/a debe poder tomar pedido de cliente
+Yo como meserx quiero tomar el pedido de un cliente para no depender de mi mala memoria, para saber cuánto cobrar, y enviarlo a la cocina para evitar errores y que se puedan ir preparando en orden.
+
+*Historia de usuario 2*: Jefe de cocina debe ver los pedidos
+Yo como jefx de cocina quiero ver los pedidos de los clientes en orden y marcar cuáles están listos para saber qué se debe cocinar y avisar a lxs meserxs que un pedido está listo para servirlo a un cliente.
+
+*Historia de usuario 3*: Meserx debe ver pedidos listos para servir
+Yo como meserx quiero ver los pedidos que están preparados para entregarlos rápidamente a los clientes que las hicieron.
+
+
+
+##### Prototipos
+
+Prototipo de baja fidelidad, con la App **Balsamiq**
+
+![prototipo-Balsamiq]()
+
+Prototipo de alta fidelidad, hechos con **Figma** 
+
+[Link para prototipo alta fidelidad Mobile]() 
+
+![prototipo]()
+
+[Link para prototipo alta fidelidad Desktop]()
+
+![prototipo]()
+
+
+
+
+##### Teste de Usuario
+
+El prototipo de alta fidelidad fue testado por 5 personas, donde constatamos que:
+
+- Hacer cambios en el tipo de letra,
+- Mejoras en pagina del muro.
+
+
+### **5. Feedbacks**  
+
+##### Feedback de compañeros:
+
+
+
+##### Feedback de coaches:
+
+En nuestro  feedback, hecho con los coaches, percibimos la necesidad de cambiar algunos puntos de nuestra página web, mejorando así los colores, letras. Nos ayudaron a mejorar nuestro codigo, dejandolo más dinamico.
+
+
+
+### **6. Pagina web Finalizada**
+
+![pagina finalizada inicio]()
+
+
+![pagina finalizada inicio]()
+
+
+![pagina finalizada inicio]()
+
+
+
+
+
+## Autor@s:
+
+  [Fabiane Santos](https://github.com/FabianeSantos?tab=repositories)
+  
+
+  [Amanda](https://github.com/adbarquitectura?tab=repositories)
+
+
+  [Sol Marina](https://github.com/SolMarina?tab=repositories)
