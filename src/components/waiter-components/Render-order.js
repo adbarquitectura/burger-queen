@@ -91,16 +91,20 @@ const RenderOrder = (props) => {
 
 
     const btnEnviarPedido = () => {
-        pruebaFireAdd().then(() => {
-            // setIdPedido('');
-            setTableClientIngresado('');
-            setNameClientIngresado('');
-            props.limpiarEstadoOrden();
 
-        })
-        console.log('se envio');
+        if (nameClientIngresado === "" || tableClientIngresado === "") {
+            alert('Por favor ingresar datos del Pedido');
+        } else {
+            pruebaFireAdd().then(() => {
+                // setIdPedido('');
+                setTableClientIngresado('');
+                setNameClientIngresado('');
+                props.limpiarEstadoOrden();
+
+            })
+            console.log('se envio');
+        }
     }
-
 
     const captureValueTable = (event) => {
         setTableClientIngresado(event.target.value);
