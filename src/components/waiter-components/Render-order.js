@@ -36,24 +36,21 @@ const RenderOrder = (props) => {
 
     const pruebaFire = () => {
         ref
-        .onSnapshot({ includeMetadataChanges: true },(querySnapshot) => {
-            // const items = [];
-            querySnapshot.forEach((doc) => {
-                // console.log(doc.data());
-                if (doc.type === "added") {
-                    console.log("New city: ", doc.data());
-                }
-                var source = querySnapshot.metadata.fromCache ? "local cache" : "server";
-                console.log("Data came from " + source);
+            .onSnapshot({ includeMetadataChanges: true }, (querySnapshot) => {
+                // const items = [];
+                querySnapshot.forEach((doc) => {
+                    // console.log(doc.data());
+                    /* if (doc.type === "added") {
+                        console.log("New city: ", doc.data());
+                    } */
+                    let source = querySnapshot.metadata.fromCache ? "local cache" : "server";
+                    console.log("Data came from " + source);
+                });
+
+                const numeroPedidos = querySnapshot.docs.length;
+                setIdPedido('pedido #' + (numeroPedidos + 1));
+
             });
-
-            const numeroPedidos = querySnapshot.docs.length;
-            setIdPedido('pedido #' + (numeroPedidos + 1));
-           
-  
-
-          
-        });
     }
 
     const pruebaFireGet = () => {
