@@ -10,7 +10,7 @@ import editaPedido from '../../img/editarPedido.png';
 
 
 const RenderOrder = (props) => {
-    
+
     const [valorIngresado, setValorIngresado] = useState('');
 
     const [itemIngresado, setitemIngresado] = useState('La Rosalia');
@@ -88,16 +88,20 @@ const RenderOrder = (props) => {
 
 
     const btnEnviarPedido = () => {
-        pruebaFireAdd().then(() => {
-            // setIdPedido('');
-            setTableClientIngresado('');
-            setNameClientIngresado('');
-            props.limpiarEstadoOrden();
 
-        })
-        console.log('se envio');
+        if (nameClientIngresado === "" || tableClientIngresado === "") {
+            alert('Por favor ingresar datos del Pedido');
+        } else {
+            pruebaFireAdd().then(() => {
+                // setIdPedido('');
+                setTableClientIngresado('');
+                setNameClientIngresado('');
+                props.limpiarEstadoOrden();
+
+            })
+            console.log('se envio');
+        }
     }
-
 
     const captureValueTable = (event) => {
         setTableClientIngresado(event.target.value);
@@ -126,7 +130,7 @@ const RenderOrder = (props) => {
     const actualizarAdicionales = (orden) => {
         props.actualizarAdicionalesOrdenes(orden);
     }
-    
+
     return (
         <div>
             <div className={styles.tabla}>
