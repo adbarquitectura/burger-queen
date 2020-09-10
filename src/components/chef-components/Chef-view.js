@@ -46,7 +46,7 @@ const ChefView = () => {
   };
 
   const enviarPedidoListo = (pedido, ordenado, orden) => {
-  
+
     const filltroPedidosEjecutados = detallePedidos.filter(pedidoListo => {
       pedidoListo = pedidoListo.data().id;
       return pedidoListo !== pedido;
@@ -76,22 +76,25 @@ const ChefView = () => {
         </div>
         <BtnCerrarSesion />
       </div>
-      
+
       <div className={styles.sectionPedido}>
-        
+
         {
           detallePedidos.map((ordenes, indice) => {
             return (
               <div key={indice} className={styles.sectionItemPedido}>
                 <div className={styles.boxItemPedido}>
-                  <p><strong>{ordenes.data().id}</strong></p>
+                  <p><strong>{ordenes.data().id}</strong> /
+                  Mesa: {ordenes.data().mesa} -
+                  Cliente: {ordenes.data().cliente}
+                  </p>
                   {[ordenes.data().orden].map(item => {
                     return (
                       item.map((element, indiceA) => {
                         return (
-                          <div className={styles.sectionItem}>
-                            <p>{element.nombre}</p>
-                            <p>{element.cantidad}</p>
+                          <div key={indiceA}
+                          className={styles.sectionItem}>
+                            <p>{element.nombre} {element.cantidad}</p>                            
                           </div>
                         )
                       })
