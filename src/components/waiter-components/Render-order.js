@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import styles from './Waiter.module.css';
 import firebase from "../../firebase/Firebase";
@@ -34,13 +35,24 @@ const RenderOrder = (props) => {
 
 
     const pruebaFire = () => {
-        ref.onSnapshot((querySnapshot) => {
+        ref
+        .onSnapshot({ includeMetadataChanges: true },(querySnapshot) => {
             // const items = [];
             querySnapshot.forEach((doc) => {
                 // console.log(doc.data());
+                if (doc.type === "added") {
+                    console.log("New city: ", doc.data());
+                }
+                var source = querySnapshot.metadata.fromCache ? "local cache" : "server";
+                console.log("Data came from " + source);
             });
+
             const numeroPedidos = querySnapshot.docs.length;
             setIdPedido('pedido #' + (numeroPedidos + 1));
+           
+  
+
+          
         });
     }
 
