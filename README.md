@@ -4,7 +4,7 @@
 
 
 
-## [Link para pagina web ]()
+##### [Link para pagina web ]()
 
 
 
@@ -20,23 +20,25 @@
 
 ### **1. Resumen del proyecto**
 
+Desarrollar un sistema que ayude a tomar los pedidos de clientes de un restaurante.
+
 La interfaz debe mostrar dos menús, cada uno con todos sus productos. El usuario debe poder ir eligiendo qué productos agregar y la interfaz debe ir mostrando el resumen del pedido con el costo total.
 
 ### **2. Resumen del producto**
 
-
+Aplicación desarrollada para el  restaurante de hamburguesas **Burger Song**, para que puedan tomar pedidos usando una tablet, y enviarlos a la cocina. Fueron utilizadas la librería React para el codigo, Firebase para almacenamiento de datos.
 
 ### **3. Planificación**
 
 Empezamos a planificar todo lo que seria necesario para el desarrollo de la página web utilizando el **Trello**, donde nos permitió una mejor visualización de todas las etapas necesarias, y dividimos las tareas por sprint.
 
-![imagen-Trello]()
+![imagen-Trello](./src/img/trello.png)
 
 ### **4. Proceso UX/ UI**
 
  Basado en ideas de las colaboradoras, creamos nuestro sketch, hecho en papel y lapis.
 
-![imagen-sketch]()
+![imagen-sketch](./src/img/diagrama-de-flujo.jpeg)
 
 ![imagen-planificación]()
 
@@ -44,11 +46,7 @@ Empezamos a planificar todo lo que seria necesario para el desarrollo de la pág
  ##### Definición de usuario
 
 
-
-
-
-
-
+ La aplicación fue diseñada y ejecutada para atender a los funcionarios de un restaurante, sendo los meseros y cocineros los principales usuarios.
 
 
 
@@ -69,38 +67,23 @@ Yo como meserx quiero ver los pedidos que están preparados para entregarlos rá
 
 Prototipo de baja fidelidad, con la App **Balsamiq**
 
-![prototipo-Balsamiq]()
+![prototipo-Balsamiq](./src/img/balsamiq.png)
 
 Prototipo de alta fidelidad, hechos con **Figma** 
 
-[Link para prototipo alta fidelidad Mobile]() 
+[Link para prototipo alta fidelidad Mobile](https://www.figma.com/proto/EvUQiKTl7JCNLXxnneZJA6/Burger-Queen?node-id=123%3A2259&scaling=min-zoom) 
 
-![prototipo]()
-
-[Link para prototipo alta fidelidad Desktop]()
-
-![prototipo]()
+![prototipo](./src/img/figma-alta-fidelidad.png)
 
 
-
-
-##### Teste de Usuario
-
-El prototipo de alta fidelidad fue testado por 5 personas, donde constatamos que:
-
-- Hacer cambios en el tipo de letra,
-- Mejoras en pagina del muro.
 
 
 ### **5. Feedbacks**  
 
-##### Feedback de compañeros:
+De acuerdo con los feedbacks recibidos:
 
-
-
-##### Feedback de coaches:
-
-En nuestro  feedback, hecho con los coaches, percibimos la necesidad de cambiar algunos puntos de nuestra página web, mejorando así los colores, letras. Nos ayudaron a mejorar nuestro codigo, dejandolo más dinamico.
+-  mejorías en el código, optimizandolo con la librería React.
+- Ayustes de fuente, pantalla, aplicación de flexbox en el menu.
 
 
 
@@ -120,10 +103,12 @@ En nuestro  feedback, hecho con los coaches, percibimos la necesidad de cambiar 
 
 ## Autor@s:
 
-  [Fabiane Santos](https://github.com/FabianeSantos?tab=repositories)
   
-
   [Amanda](https://github.com/adbarquitectura?tab=repositories)
 
 
   [Sol Marina](https://github.com/SolMarina?tab=repositories)
+
+
+
+  [Fabiane Santos](https://github.com/FabianeSantos?tab=repositories)
