@@ -5,16 +5,24 @@ const AdicionalesComponent = (props) => {
     const [notasItemIngresado, setnotasItemIngresado] = useState('');
     const [adicionalesSeleccionados, setAdicionalesSeleccionados] = useState([]);
 
-    const actualizaOrden = () => {
-        props.actualizarAdicionales(props.orden);
 
+
+    const actualizaOrden = () => {
+        props.actualizarAdicionales(props.orden, adicionalesSeleccionados, notasItemIngresado);
     };
 
     const captureNotasItem = (event) => {
         setnotasItemIngresado(event.target.value);
     }
-    const checkActivado = (item) => {
-        console.log(item);
+    const checkActivado = (item, event) => {
+        if (event.target.checked === true) {
+            setAdicionalesSeleccionados([...adicionalesSeleccionados, item]);
+        }
+        else {
+            const indiceItem = adicionalesSeleccionados.indexOf(item);
+            adicionalesSeleccionados.splice(indiceItem, 1);
+            setAdicionalesSeleccionados(adicionalesSeleccionados);
+        }
     }
 
     return (
@@ -25,7 +33,7 @@ const AdicionalesComponent = (props) => {
                     return (
                         <div key={indice}>
                             <input
-                                onChange={() => checkActivado(item)}
+                                onChange={(event) => checkActivado(item, event)}
                                 type="checkbox"
                                 name="adicionales"
                                 value={item.precio}
@@ -36,7 +44,7 @@ const AdicionalesComponent = (props) => {
             }
             <textarea className={styles.textarea} type="search" name="post" placeholder="Observaciones:"
                 onChange={captureNotasItem}
-                defaultValue={notasItemIngresado}>
+                value={notasItemIngresado}>
             </textarea>
             <button onClick={actualizaOrden} className={styles.btnAlert}>Cerrar Adicionales</button>
         </div>

@@ -1,8 +1,7 @@
 .container {
     display: flex;
     flex-flow: row;
-    background-color: transparent;
-    display: flex;
+    background-color: transparent;    
     width: 100%;
     background-color: #F0EFEB;
 }
@@ -32,12 +31,16 @@
     align-items: center;
     box-sizing: border-box;
     margin-block-end: auto;
+    /*border: solid 1px green;
+    padding-top: 50px;
+    padding-bottom: 50px; */
+    
 }
 
 .imgItemMenu {
     width: 100px;
     height: 100px;
-    object-fit: cover;
+    object-fit: cover;    
     /* border: solid gray 2px; */
     margin: 4px auto 0 auto;
     position: relative;

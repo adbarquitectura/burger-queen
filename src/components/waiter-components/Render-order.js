@@ -32,6 +32,7 @@ const RenderOrder = (props) => {
 
     const ref = firebase.firestore().collection('ordenes');
 
+
     const pruebaFire = () => {
         ref.onSnapshot((querySnapshot) => {
             // const items = [];
@@ -59,6 +60,8 @@ const RenderOrder = (props) => {
                 cantidad: 1,
                 nombre: orden.nombreItem,
                 precio: orden.precioItem,
+                adicionales: orden.adicionalesSeleccionados,
+                observaciones: orden.observaciones
 
             }
         });
@@ -81,7 +84,7 @@ const RenderOrder = (props) => {
     useEffect(() => {
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
         const totalOrden = props.totalOrdenesTraidas;
-        const sumaTotalOrdenes = totalOrden.reduce(reducer);
+        const sumaTotalOrdenes = totalOrden.reduce(reducer, 0);
 
         setTotalPedidoIngresado(sumaTotalOrdenes);
     }, [props.totalOrdenesTraidas]);
@@ -127,8 +130,9 @@ const RenderOrder = (props) => {
         setOrdenConAdicionales(orden);
     }
 
-    const actualizarAdicionales = (orden) => {
-        props.actualizarAdicionalesOrdenes(orden);
+    const actualizarAdicionales = (orden, adicionales, notas) => {
+        props.actualizarAdicionalesOrdenes(orden, adicionales, notas);
+        setOrdenConAdicionales(null);
     }
 
     return (
@@ -150,13 +154,11 @@ const RenderOrder = (props) => {
                                 props.ordenesTraidas.map((orden, index) => {
                                     return (
                                         <tr key={index}>
-                                            {/* <td><button onClick={() => editarItemPedido(orden)} className={styles.btnIcon}>Editar Pedido</button></td> */}
-                                            <td>  <img src={editaPedido} alt="" onClick={() => editarItemPedido(orden)} className={styles.btnIcon} /></td>
+                                            <td><img src={editaPedido} alt="" onClick={() => editarItemPedido(orden)} className={styles.btnIcon} /></td>
                                             <td>{orden.nombreItem}</td>
                                             <td>{cantidadItemIngresado}</td>
                                             <td>{orden.precioItem}</td>
-                                            {/* <td><button onClick={() => eliminarItemPedido(index)} className={styles.btnIcon}>Eliminar Pedido</button></td> */}
-                                            <td>  <img src={basurero} alt="" onClick={() => eliminarItemPedido(index)} className={styles.btnIcon} /></td>
+                                            <td><img src={basurero} alt="" onClick={() => eliminarItemPedido(index)} className={styles.btnIcon} /></td>
                                         </tr>
                                     );
                                 })
@@ -192,10 +194,12 @@ const RenderOrder = (props) => {
                 <button onClick={btnEnviarPedido}>Enviar Pedido</button>
                 <button onClick={limpiarInput} className={styles.btnAlert}>Eliminar Pedido</button>
             </div>
-            <AdicionalesComponent
+            {ordenConAdicionales && <AdicionalesComponent
                 actualizarAdicionales={actualizarAdicionales}
                 orden={ordenConAdicionales}
             />
+            }
+
         </div >
     );
 }
