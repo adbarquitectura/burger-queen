@@ -39,12 +39,13 @@ const WaiterView = () => {
       id: ordenRecibida.id,
       nombreItem: ordenRecibida.nombre,
       adicionalesItem: ordenRecibida.adicionales,
-      precioItem: ordenRecibida.precio
+      precioItem: ordenRecibida.precio,
+      adicionalesSeleccionados: [],
+      observaciones:''      
     };
     setOrdenesPedidas([...ordenesPedidas, orden]);
 
     setTotalPedidoIngresado([...totalPedidoIngresado, ordenRecibida.precio]);
-
   };
 
   const limpiarEstadoOrden = () => {
@@ -64,8 +65,18 @@ const WaiterView = () => {
     setTotalPedidoIngresado(totalOrdenesFiltradas);
   }
 
-  const actualizarAdicionalesOrdenes = (adicionalesRecibidos) => {
-    console.log(adicionalesRecibidos);
+  const actualizarAdicionalesOrdenes = (ordenRecibida, adicionalesRecibidos, notasRecibidas) => {
+    
+    const orden = {
+      id: ordenRecibida.id,
+      nombreItem: ordenRecibida.nombreItem,
+      adicionalesItem: ordenRecibida.adicionalesItem,
+      precioItem: ordenRecibida.precioItem,
+      adicionalesSeleccionados: adicionalesRecibidos,
+      observaciones:notasRecibidas   
+    };
+    console.log(orden);
+    
     // setOrdenesPedidas(adicionalesRecibidos);
   }
 
