@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import styles from './Waiter.module.css';
 import logo from '../../img/logo.png';
@@ -20,9 +21,13 @@ const WaiterView = () => {
   const refListas = firebase.firestore().collection('ordenesListas');
 
   const getOrdenesListas = () => {
-    refListas.onSnapshot((querySnapshot) => {
+    refListas
+    .onSnapshot({ includeMetadataChanges: true },(querySnapshot) => {
       console.log(querySnapshot.docs.length)
-     setCountPedido(querySnapshot.docs.length);     
+     setCountPedido(querySnapshot.docs.length);   
+     
+     var source2 = querySnapshot.metadata.fromCache ? "local cache" : "server";
+          console.log("Data came from " + source2);
     })
   };
   
@@ -127,4 +132,3 @@ const WaiterView = () => {
 }
 
 export default WaiterView;
-
