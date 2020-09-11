@@ -94,13 +94,12 @@ const RenderOrder = (props) => {
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
         const totalOrden = props.totalOrdenesTraidas;
         const sumaTotalOrdenes = totalOrden.reduce(reducer, 0);
-
+        
         setTotalPedidoIngresado(sumaTotalOrdenes);
     }, [props.totalOrdenesTraidas]);
 
 
     const btnEnviarPedido = () => {
-
         if (nameClientIngresado === "" || tableClientIngresado === "") {
             alert('Por favor ingresar datos del Pedido');
         } else {
