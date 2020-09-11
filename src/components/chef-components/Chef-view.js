@@ -26,7 +26,7 @@ const ChefView = () => {
   };
 
   const agregarOrdenLista = (ordenEntregada) => {
-    refListas.add({ ordenEntregada });
+    refListas.add( ordenEntregada );
   }
 
 
