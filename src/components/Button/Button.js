@@ -5,11 +5,16 @@ import {
     Link
 } from "react-router-dom";
 
+
 const BtnCerrarSesion = () => {
+
+    const closeSetion = () => {
+        localStorage.setItem('user', '');
+    }
 
     return (
         <div className={styles.buttoncerrar}>
-            <button className={styles.buttonSalir}><Link to="/">Cerrar Sesión</Link></button>
+            <button onClick={closeSetion} className={styles.buttonSalir}><Link to="/">Cerrar Sesión</Link></button>
         </div>
 
     )

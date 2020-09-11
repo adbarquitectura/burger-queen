@@ -5,12 +5,12 @@ import logo from '../../img/logo.png';
 import ItemMenu from './Item-menu';
 import RenderOrder from './Render-order';
 import ItemPostres from './Item-postres';
-import CurrentTime from './Fecha/Fecha';
-import BtnCerrarSesion from './Button/Button';
+import BtnCerrarSesion from '../Button/Button';
 
 import firebase from '../../firebase/Firebase';
 import campana from '../../img/campana.png';
 import PedidosMesero from './Pedidos-mesero';
+import CurrentTime from '../Fecha/Current-date';
 
 const WaiterView = () => {
   const [showMenu, setShowMenu] = useState('menu');
@@ -105,7 +105,7 @@ const WaiterView = () => {
             </div>
           </div>
           <div className={styles.fecha}>
-            <CurrentTime />
+            <CurrentTime/>
           </div>
           <BtnCerrarSesion />
         </div>
