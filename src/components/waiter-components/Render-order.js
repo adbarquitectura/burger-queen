@@ -186,11 +186,18 @@ const RenderOrder = (props) => {
                     defaultValue={idPedido}
                 />
                 <h2>Mesa:</h2>
-                <input type="text"
-                    onChange={captureValueTable}
+                <select onChange={captureValueTable}
                     className={styles.inputCliente}
-                    value={tableClientIngresado}
-                />
+                    value={tableClientIngresado}>
+
+                    <option value={captureValueClient}></option>
+                    <option value={captureValueClient}>1</option>
+                    <option value={captureValueClient}>2</option>
+                    <option value={captureValueClient}>3</option>
+                    <option value={captureValueClient}>4</option>
+                    <option value={captureValueClient}>5</option>
+                </select>
+
                 <h2>Cliente:</h2>
                 <input
                     onChange={captureValueClient}
