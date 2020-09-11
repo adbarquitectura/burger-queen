@@ -3,10 +3,15 @@ import React, { useState } from 'react';
 const UserName = () => {
     const [userName, setUsername] = useState('');
 
-    const name = (e) => {
-        setUsername(e.target.value)
+    const actualizarNameUser = (nombreIngresado) => {
+        localStorage.setItem('user', nombreIngresado);
     }
-    console.log(userName)
+
+    const name = (e) => {
+        setUsername(e.target.value);
+        actualizarNameUser(e.target.value);
+    }
+    console.log(userName);
 
     return (
         <div>

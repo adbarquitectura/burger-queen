@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Chef.module.css';
 import logo from '../../img/logo.png';
-import CurrentTime from './Fecha';
+import CurrentTime from '../Fecha/Current-date';
 
 import firebase from '../../firebase/Firebase';
-import BtnCerrarSesion from '../waiter-components/Button/Button';
+import BtnCerrarSesion from '../Button/Button';
 import campana from '../../img/campana.png';
 
 const ChefView = () => {
@@ -72,7 +72,7 @@ const ChefView = () => {
         </div>
 
         <div className={styles.fecha}>
-          <CurrentTime />
+          <CurrentTime/>
         </div>
         <BtnCerrarSesion />
       </div>

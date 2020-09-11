@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+// import UserName from '../sign-in-components/Nombre';
 import styles from './Fecha.module.css'
 
 
 const CurrentTime = () => {
+    const [userActive, setUserActive] = useState('');
+
+    const getUserActive = () => {
+        const userInSetion = localStorage.getItem('user');
+        console.log(userInSetion);
+        setUserActive(userInSetion);
+    }
+    
+    useEffect(() => {
+        getUserActive();
+    },[]);
 
     let date = new Date();
 
@@ -15,6 +27,7 @@ const CurrentTime = () => {
 
     return (
         <div className={styles.fecha}>
+            <p>{userActive}</p>
             <p>{day}/{month}/{year}, {hours}:{minutes}hrs</p>
         </div>
 
