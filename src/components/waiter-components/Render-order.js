@@ -200,7 +200,7 @@ const RenderOrder = (props) => {
                 </select>
 
                 <h2>Cliente:</h2>
-                <input
+                <input type='search'
                     onChange={captureValueClient}
                     className={styles.inputCliente}
                     value={nameClientIngresado}
