@@ -220,6 +220,7 @@ button {
     font-size: 18px;
     align-items: center;
     text-align: center;
+
     font-weight: 500;
     color: rgba(37, 40, 56);
 }
@@ -238,13 +239,3 @@ button {
         transform: rotate(45deg);
     }
 } 
-/* 
-.imgbell:hover{
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg); 
-    -o-transform: rotate(-45deg); 
-    width: 50%;
-    background-color: tomato; 
- 
-}   */
