@@ -71,7 +71,7 @@ Prototipo de baja fidelidad, con la App **Balsamiq**
 
 Prototipo de alta fidelidad, hechos con **Figma** 
 
-[Link para prototipo alta fidelidad Mobile](https://www.figma.com/proto/EvUQiKTl7JCNLXxnneZJA6/Burger-Queen?node-id=123%3A2259&scaling=min-zoom) 
+[Link para prototipo alta fidelidad- tablet](https://www.figma.com/proto/EvUQiKTl7JCNLXxnneZJA6/Burger-Queen?node-id=123%3A2259&scaling=min-zoom) 
 
 ![prototipo](./src/img/figma-alta-fidelidad.png)
 
@@ -104,10 +104,10 @@ De acuerdo con los feedbacks recibidos:
 ## Autor@s:
 
   
-  [Amanda](https://github.com/adbarquitectura?tab=repositories)
+  [Amanda Diaz](https://github.com/adbarquitectura?tab=repositories)
 
 
-  [Sol Marina](https://github.com/SolMarina?tab=repositories)
+  [Sol Marina Parra Arrioja](https://github.com/SolMarina?tab=repositories)
 
 
 

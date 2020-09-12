@@ -23,3 +23,8 @@
     background-color: #FB5607;
     color: white;
 }
+
+.check{
+  font-size: 20px;
+  border: red
+}
