@@ -190,12 +190,12 @@ const RenderOrder = (props) => {
                     className={styles.inputCliente}
                     value={tableClientIngresado}>
 
-                    <option value={captureValueClient}></option>
-                    <option value={captureValueClient}>1</option>
-                    <option value={captureValueClient}>2</option>
-                    <option value={captureValueClient}>3</option>
-                    <option value={captureValueClient}>4</option>
-                    <option value={captureValueClient}>5</option>
+                    <option>Elija mesa</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
                 </select>
 
                 <h2>Cliente:</h2>

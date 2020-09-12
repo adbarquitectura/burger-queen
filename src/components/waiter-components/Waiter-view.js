@@ -96,7 +96,7 @@ const WaiterView = () => {
           <div className={styles.datosPersonalizados}>
             <p onClick={() => updatemenu('menu')}>Menú Principal</p>
             <p onClick={() => updatemenu('postres')}>Postres</p>
-            <p onClick={() => updatemenu('pedidos')}>Pedidos</p>
+            <p onClick={() => updatemenu('pedidos')}>Pedidos Listos</p>
           </div>
           <div className={styles.countbell}>
             <span>{countPedido}</span>
