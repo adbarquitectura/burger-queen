@@ -29,7 +29,7 @@ const ItemPostres = (props) => {
           className={styles.box}>
           <div className={styles.card}>
             <img src={item.img} alt="" className={styles.imgItemMenu} />
-            <h3>{item.nombre}</h3>
+            <h3 className={styles.tituloItemMenu}>{item.nombre}</h3>
           </div>
         </div>
 

@@ -33,6 +33,7 @@ const AdicionalesComponent = (props) => {
                     return (
                         <div key={indice}>
                             <input
+                                className={styles.checkbox}
                                 onChange={(event) => checkActivado(item, event)}
                                 type="checkbox"
                                 name="adicionales"

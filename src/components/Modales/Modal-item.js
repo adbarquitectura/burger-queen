@@ -13,10 +13,7 @@ const ModalDescripcionItem = (props) => {
         <div style={props.styleModal} className={styles.modal}>
             {/* Modal content*/}
             <div className={styles.modalContent}>
-                <span
-                    className={styles.close}
-                    onClick={cerrarModalDesplegado}
-                >&times;</span>
+                
                 <div
                     className={styles.containerItem}>
                     <div>
@@ -25,6 +22,10 @@ const ModalDescripcionItem = (props) => {
                     <h2>{props.itemMostrado.nombre}</h2>
                     <p>{props.itemMostrado.descripcion}</p>
                 </div>
+                <span
+                    className={styles.close}
+                    onClick={cerrarModalDesplegado}
+                >&times; volver</span>
             </div>
 
         </div>

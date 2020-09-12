@@ -21,6 +21,8 @@ const WaiterView = () => {
 
   const refListas = firebase.firestore().collection('ordenesListas');
 
+  const [styleAnimation, setAnimation] = useState({ display: 'none' }) 
+
   const getOrdenesListas = () => {
     refListas
       .onSnapshot({ includeMetadataChanges: true }, (querySnapshot) => {        
@@ -84,7 +86,6 @@ const WaiterView = () => {
 
     // setOrdenesPedidas(adicionalesRecibidos);
   }
-
 
   return (
     <div className={styles.container}>

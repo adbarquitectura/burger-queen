@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import styles from './Sign-in.module.css';
-import UserName from '../Current-user';
+import UserName from './Current-user';
 
 import {
   Link
 } from "react-router-dom";
-
-
 
 
 const SignInView = () => {
