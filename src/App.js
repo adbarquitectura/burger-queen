@@ -13,19 +13,19 @@ import SignInView from './components/sign-in-components/Sign-in-view';
 function App() {
   return (
     <Router>
-      <div>
-        <Switch>
-          <Route path="/chef">
-            <ChefView />
-          </Route>
-          <Route path="/waiter">
-            <WaiterView />
-          </Route>
-          <Route path="/">
-            <SignInView />
-          </Route>
-        </Switch>
-      </div>
+
+      <Switch>
+        <Route path="/chef">
+          <ChefView />
+        </Route>
+        <Route path="/waiter">
+          <WaiterView />
+        </Route>
+        <Route path="/">
+          <SignInView />
+        </Route>
+      </Switch>
+
     </Router>
   );
 }

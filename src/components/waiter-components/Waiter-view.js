@@ -9,7 +9,7 @@ import BtnCerrarSesion from '../Button/Button';
 
 import firebase from '../../firebase/Firebase';
 import campana from '../../img/campana.png';
-import PedidosMesero from './Pedidos-mesero';
+import PedidosMesero from './Pedidos-mesero/Pedidos-mesero';
 import CurrentTime from '../Fecha/Current-date';
 
 const WaiterView = () => {
@@ -20,6 +20,8 @@ const WaiterView = () => {
   const [totalPedidoIngresado, setTotalPedidoIngresado] = useState([0]);
 
   const refListas = firebase.firestore().collection('ordenesListas');
+
+  const [styleAnimation, setAnimation] = useState({ display: 'none' }) 
 
   const getOrdenesListas = () => {
     refListas
@@ -84,7 +86,6 @@ const WaiterView = () => {
 
     // setOrdenesPedidas(adicionalesRecibidos);
   }
-
 
   return (
     <div className={styles.container}>

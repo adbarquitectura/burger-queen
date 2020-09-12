@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './Sign-in.module.css';
 
 const UserName = () => {
     const [userName, setUsername] = useState('');
@@ -18,6 +19,8 @@ const UserName = () => {
             <input type="text"
                 onChange={name}
                 value={userName}
+                placeholder="Ingrese su usuario"
+                className={styles.inputSign}
             >
             </input>
         </div>

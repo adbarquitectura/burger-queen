@@ -32,7 +32,9 @@ const AdicionalesComponent = (props) => {
                 props.orden && props.orden.adicionalesItem.map((item, indice) => {
                     return (
                         <div key={indice}>
-                            <input className={styles.check}
+
+                            <input
+                                className={styles.checkbox}
                                 onChange={(event) => checkActivado(item, event)}
                                 type="checkbox"
                                 name="adicionales"

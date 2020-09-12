@@ -24,6 +24,7 @@ const ItemPostres = (props) => {
             item={item}
             enviarOrdenes={props.enviarOrdenes}
           />
+
         </div>
 
       );
