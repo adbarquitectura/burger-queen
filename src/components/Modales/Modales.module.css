@@ -23,3 +23,11 @@
     font-size: 0.9em;
     color: #fff;
 }
+.imgItemMenu {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;    
+    /* border: solid gray 2px; */
+    margin: 4px auto 0 auto;
+    position: relative;
+}

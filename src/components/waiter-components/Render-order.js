@@ -162,11 +162,11 @@ const RenderOrder = (props) => {
                             {
                                 props.ordenesTraidas.map((orden, index) => {
                                     return (
-                                        <tr key={index}>
+                                        <tr key={index} className={styles.boxTable}>
                                             <td><img src={editaPedido} alt="" onClick={() => editarItemPedido(orden)} className={styles.btnIcon} /></td>
                                             <td>{orden.nombreItem}</td>
                                             <td>{cantidadItemIngresado}</td>
-                                            <td>{orden.precioItem}</td>
+                                            <td>$ {orden.precioItem}</td>
                                             <td><img src={basurero} alt="" onClick={() => eliminarItemPedido(index)} className={styles.btnIcon} /></td>
                                         </tr>
                                     );
@@ -176,7 +176,7 @@ const RenderOrder = (props) => {
                         </tbody>
                     </table>
 
-                    < h2 > Total: {totalPedidoIngresado}</h2>
+                    < h2 > Total: $ {totalPedidoIngresado}</h2>
                 </div>
             </div>
 

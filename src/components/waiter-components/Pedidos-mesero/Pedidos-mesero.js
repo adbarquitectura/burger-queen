@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Pedido.module.css';
-import firebase from '../../firebase/Firebase';
+import firebase from '../../../firebase/Firebase';
 
 const PedidosMesero = (props) => {
     const [showOrderStatus, setShowOrderStatus] = useState([]);
