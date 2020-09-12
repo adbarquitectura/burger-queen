@@ -27,7 +27,6 @@ const ItemMenu = (props) => {
           />
         </div>
       )
-
     }
     )
   )
@@ -35,7 +34,6 @@ const ItemMenu = (props) => {
 
 
 const ItemMenuConModal = (props) => {
-
   const [styleModal, showModal, hideModal] = useModal();
 
   const handleClick = () => {

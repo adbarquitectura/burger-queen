@@ -19,7 +19,11 @@ const ModalDescripcionItem = (props) => {
                 >&times;</span>
                 <div
                     className={styles.containerItem}>
-                    {props.itemMostrado.descripcion}
+                    <div>
+                    <img src={props.itemMostrado.img} alt="" className={styles.imgItemMenu} />
+                    </div>
+                    <h2>{props.itemMostrado.nombre}</h2>
+                    <p>{props.itemMostrado.descripcion}</p>
                 </div>
             </div>
 

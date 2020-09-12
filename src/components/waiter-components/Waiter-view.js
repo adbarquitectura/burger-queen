@@ -9,7 +9,7 @@ import BtnCerrarSesion from '../Button/Button';
 
 import firebase from '../../firebase/Firebase';
 import campana from '../../img/campana.png';
-import PedidosMesero from './Pedidos-mesero';
+import PedidosMesero from './Pedidos-mesero/Pedidos-mesero';
 import CurrentTime from '../Fecha/Current-date';
 
 const WaiterView = () => {
