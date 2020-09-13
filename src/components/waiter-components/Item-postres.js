@@ -20,7 +20,7 @@ const ItemPostres = (props) => {
     postresData.map(item => {
       return (
         <div key={item.id}>
-            <ItemMenuConModal
+          <ItemMenuConModal
             item={item}
             enviarOrdenes={props.enviarOrdenes}
           />
@@ -47,11 +47,11 @@ const ItemMenuConModal = (props) => {
         className={styles.box}>
         <div className={styles.card}>
           <img src={props.item.img} alt="" className={styles.imgItemMenu} />
-          <h3>{props.item.nombre}</h3>
+          <h3 className={styles.tituloItemMenu}>{props.item.nombre}</h3>
         </div>
       </div>
       <div>
-        <p onClick={showModal}>Ver más...</p>
+        <p onClick={showModal} className={styles.titulosGrey}>Ver más...</p>
         <div>
           {
             <ModalDescripcionItem
