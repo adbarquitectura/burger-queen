@@ -1,0 +1,70 @@
+.sectionPedido {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    align-items: center;
+    height: 100%;    
+    line-height: 5px;
+    padding-top: 10px;
+}
+/* 
+.sectionPedidolisto {
+    display: flex;
+    flex-flow: column;
+    background-color: #616161;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    align-items: center;
+} */
+
+.sectionItemPedido{    
+    line-height: 15px;
+    border: solid 1px black;
+    border-radius: 10px;    
+    margin: 10px;
+    background-color: white;
+    display: flex;
+    width: 90%;
+    align-items: center;
+    /* border: solid 1px magenta; */
+}
+.boxItemPedido{
+    
+    /* border: solid 1px green;  */
+    margin: 20px;    
+    display:flex;
+    flex-flow: row;
+    align-items: center;
+}
+.sectionItem{
+    display: flex;
+    flex-flow: column;
+}
+.botonCocina{
+    width: 180px;
+    height: 37px;
+    margin: 10px;
+    background-color: #FCBF49;
+    color: black;
+    font-size: 18px;
+    font-weight: 300;
+    border-radius: 20px;
+    border: .5px solid black;
+    text-align: center;
+    padding: 2px auto 2px auto;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.botonCocina:hover{   
+    background-color:#FB5607;
+    color: white;    
+}
+.buttonKitchen {
+    margin: 5px 5px 5px auto;
+    display: grid;
+    justify-content: flex-end;
+    align-self: center;
+    /* border: solid 1px tomato;   */
+}
+
