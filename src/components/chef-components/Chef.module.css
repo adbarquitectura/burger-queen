@@ -29,7 +29,7 @@
 .sectionPedido {
     display: flex;
     flex-flow: column;
-    width: 60%;
+    width: 70%;
     align-items: center;
     height: 100%;    
     line-height: 5px;    
@@ -38,8 +38,8 @@
 .sectionPedidolisto {
     display: flex;
     flex-flow: column;
-    background-color: #616161;
-    width: 25%;
+    background-color: rgba(37, 40, 56);
+    width: 15%;
     padding: 10px;
     box-sizing: border-box;
     align-items: center;
@@ -53,15 +53,42 @@
     background-color: white;
     display: flex;
     width: 90%;
-}
-.boxItemPedido{
+    box-sizing: border-box;
     
+}
+.boxItemPedido{    
     /* border: solid 1px green;  */
-    margin: 20px;    
+    margin: 20px;
+    width: 60%;    
 }
 .sectionItem{
-    /* border: solid 1px blue;    */
-    line-height: 7px;
+     /* border: solid 1px blue; */
+     display: flex;
+     width: auto;
+     align-items: center;   
+}
+
+.adicionalItem{
+    /* border: solid 1px pink; */
+    width: 150px;
+    text-align: center;    
+}
+
+.adicionalItemObs{
+    /* border: solid 1px rgba(37, 40, 56); */
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    font-size: 14px;
+    color: #FB5607;
+    line-height: 18px;
+}
+
+.tituloBlanco{
+    text-align: center;
+    color: white;
+    font-size: 16px;
+
 }
 
 h3 {
@@ -114,42 +141,15 @@ h3 {
     display: flex;
     flex-flow: row;
     align-content: center;
-    border-radius: 5px;
-    border: solid white 3px;
+    color: #FCBF49;
     width: 100%;
-}
-
-.buttonSee {
-    width: 90%;
-    background-color: rgba(251, 86, 7, 1);
-}
-
-.seeOrder {
-    flex: 1 1;
-}
-
-.numberAndtime {
-    flex: 1 1;
-    margin-left: 10px;
-}
-
-.customerName {
-    flex: 1 1;
-}
-
-.fecha {
-    color: #616161;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    display: block;
-    margin: 100px auto 0 auto;
-    text-align: center;
+    border-style: none;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
 }
 
 .bell {
     margin-top: 20px;
-    width: 100%;
 }
 
 .imgbell {
@@ -157,9 +157,10 @@ h3 {
 }
 
 .countbell {
-    margin-bottom: 70px;
-    width: 100%;
+    margin: 120px auto 70px auto;
     font-size: 18px;
     align-items: center;
     text-align: center;
+    font-weight: 500;
+    color: rgba(37, 40, 56);
 }
