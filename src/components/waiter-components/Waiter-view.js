@@ -17,11 +17,7 @@ const WaiterView = () => {
   const [ordenesPedidas, setOrdenesPedidas] = useState([]);
   const [countPedido, setCountPedido] = useState(0);
 
-  // const [totalPedidoIngresado, setTotalPedidoIngresado] = useState([0]);
-
   const refListas = firebase.firestore().collection('ordenesListas');
-
-  // const [styleAnimation, setAnimation] = useState({ display: 'none' }) 
 
   const getOrdenesListas = () => {
     refListas
@@ -51,13 +47,10 @@ const WaiterView = () => {
       observaciones: ''
     };
     setOrdenesPedidas([...ordenesPedidas, orden]);
-
-    // setTotalPedidoIngresado([...totalPedidoIngresado, ordenRecibida.precio]);
   };
 
   const limpiarEstadoOrden = () => {
     setOrdenesPedidas([]);
-    // setTotalPedidoIngresado([0]);
   }
 
   const eliminarItemPedido = (indexAEliminar) => {
@@ -69,7 +62,6 @@ const WaiterView = () => {
     const totalOrdenesFiltradas = ordenesFiltradas.map(orden => {
       return orden.precioItem;
     })
-    // setTotalPedidoIngresado(totalOrdenesFiltradas);
   }
 
   const actualizarAdicionalesOrdenes = (ordenRecibida, adicionalesRecibidos, notasRecibidas, index) => {
@@ -129,8 +121,6 @@ const WaiterView = () => {
           limpiarEstadoOrden={limpiarEstadoOrden}
           eliminarItemPedido={eliminarItemPedido}
           actualizarAdicionalesOrdenes={actualizarAdicionalesOrdenes}
-
-          // totalOrdenesTraidas={totalPedidoIngresado}
 
         />
       </div>
