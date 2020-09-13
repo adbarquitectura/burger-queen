@@ -17,6 +17,7 @@
   /* padding-block-end: 11px;
       padding-block-start: 25px; */
   cursor: pointer;
+  
 }
 
 .btnAlert {
@@ -27,5 +28,10 @@
 input[type="checkbox"]+label {
   border: red;
   background-color: yellowgreen;
-
+  
 }
+
+span {
+  text-transform: capitalize;
+}
+

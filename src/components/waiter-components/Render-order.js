@@ -47,9 +47,9 @@ const RenderOrder = (props) => {
                 });
 
                 const numeroPedidos = querySnapshot.docs.length;
-                setIdPedido('pedido #' + (numeroPedidos + 1));
+                setIdPedido('Pedido #' + (numeroPedidos + 1));
                 let source = querySnapshot.metadata.fromCache ? "local cache" : "server";
-                console.log("Data came from " + source);
+               
 
             });
     }
