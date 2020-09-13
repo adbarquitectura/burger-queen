@@ -44,7 +44,8 @@ const AdicionalesComponent = (props) => {
     }, [props.orden.observaciones, props.orden.adicionalesSeleccionados]);
 
     return (
-        <div>
+        <div className={styles.datosAdicionales}>
+            <div>
             <h2>Adicionales:</h2>
             {
                 props.orden.adicionalesItem && props.orden.adicionalesItem.map((item, indice) => {
@@ -67,7 +68,8 @@ const AdicionalesComponent = (props) => {
                 onChange={captureNotasItem}
                 value={notasItemIngresado}>
             </textarea>
-            <button onClick={actualizaOrden} className={styles.btnAlert}>Cerrar Adicionales</button>
+            <button onClick={actualizaOrden} className={styles.btnAlertWhite}>Cerrar Adicionales</button>
+            </div>
         </div>
     )
 

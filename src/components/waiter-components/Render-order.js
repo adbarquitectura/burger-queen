@@ -130,7 +130,7 @@ const RenderOrder = (props) => {
     }, [props.ordenesTraidas]);
 
     return (
-        <div>
+        <div className={styles.sectionRenderPedido}>
             <div className={styles.tabla}>
                 <h1>Pedidos</h1>
 
@@ -192,7 +192,7 @@ const RenderOrder = (props) => {
                 />
             </div>
             <div className={styles.sectionBtns}>
-                <button onClick={btnEnviarPedido}>Enviar Pedido</button>
+                <button onClick={btnEnviarPedido} className={styles.buttonBase}>Enviar Pedido</button>
                 <button onClick={limpiarInput} className={styles.btnAlert}>Eliminar Pedido</button>
             </div>
             {ordenConAdicionales && <AdicionalesComponent

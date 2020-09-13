@@ -51,7 +51,7 @@ const WaiterView = () => {
 
   const limpiarEstadoOrden = () => {
     setOrdenesPedidas([]);
-  }
+  };
 
   const eliminarItemPedido = (indexAEliminar) => {
     const ordenesFiltradas = ordenesPedidas.filter((orden, index) => {
@@ -62,7 +62,7 @@ const WaiterView = () => {
     const totalOrdenesFiltradas = ordenesFiltradas.map(orden => {
       return orden.precioItem;
     })
-  }
+  };
 
   const actualizarAdicionalesOrdenes = (ordenRecibida, adicionalesRecibidos, notasRecibidas, index) => {
 
@@ -73,15 +73,11 @@ const WaiterView = () => {
       precioItem: ordenRecibida.precioItem,
       adicionalesSeleccionados: adicionalesRecibidos,
       observaciones: notasRecibidas
-    };
-    console.log(orden);
-    console.log(index);
+    };   
 
     ordenesPedidas[index] = orden;
     setOrdenesPedidas([...ordenesPedidas]);
-
-
-  }
+  };
 
   return (
     <div className={styles.container}>
@@ -108,7 +104,7 @@ const WaiterView = () => {
         </div>
       </div>
       <div className={styles.sectionMenu}>
-        <div className={styles.sectionMenu}>
+        <div className={styles.sectionRenderMenu}>
           {showMenu === 'menu' ? <ItemMenu enviarOrdenes={actualizaEstadoOrden} /> :
             showMenu === 'postres' ? <ItemPostres enviarOrdenes={actualizaEstadoOrden} /> :
               <PedidosMesero />
@@ -126,6 +122,6 @@ const WaiterView = () => {
       </div>
     </div >
   );
-}
+};
 
 export default WaiterView;
