@@ -25,7 +25,7 @@ const WaiterView = () => {
         setCountPedido(querySnapshot.docs.length);
 
         let source2 = querySnapshot.metadata.fromCache ? "local cache" : "server";
-        console.log("Data came from " + source2);
+
       })
   };
 

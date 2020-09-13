@@ -59,7 +59,8 @@ const AdicionalesComponent = (props) => {
                                 name="adicionales"
                                 value={item.precio}
                                 checked={validarCheckedCheckbox(item)}
-                            />{item.nombre}
+                            /><span>{item.nombre}</span>
+                            {/* {item.nombre.charAt(0).toUpperCase()+ item.nombre.slice(1)} */}
                         </div>
                     )
                 })
