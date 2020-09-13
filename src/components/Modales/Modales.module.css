@@ -7,27 +7,48 @@
     top: 0;
     width: 100%;
     height: 100%; 
-    overflow: auto; /* Enable scroll if needed */
+    overflow: auto; 
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4); 
 }
 .modalContent {
-    background-color:  rgba(37, 40, 56);  
+    background-color: rgba(37, 40, 56);
     margin: auto;
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #888;
-    width: 25%;
+    width: 39%;
     border-radius: 15px;
-    font-family: 'Source Sans Pro';
     font-weight: 400;
-    font-size: 0.9em;
+    font-size: 15px;
     color: #fff;
+    margin-left: 19%;
+    margin-top: 10%;
 }
 .imgItemMenu {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     object-fit: cover;    
-    /* border: solid gray 2px; */
-    margin: 4px auto 0 auto;
     position: relative;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.close{
+    width: 70px;
+    height: 20px;
+    margin: 3px 0% 3px auto;
+    background-color: #FB5607;
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+    border-radius: 20px;
+    border: .5px solid transparent;
+    text-align: center;
+    display: block;
+}
+
+.letter{
+    font-size: 20px;
+color: rgb(201, 196, 196) ;
+    box-shadow: 0px 4px 4px white, 0px 4px 4px white);
 }

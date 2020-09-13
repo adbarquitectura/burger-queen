@@ -23,6 +23,7 @@
     align-items: center;
     padding: 10px;
     box-sizing: border-box;
+    height: 100%;
 }
 
 .sectionMenu {
@@ -82,6 +83,7 @@
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 @font-face {
@@ -255,9 +257,9 @@ td {
     margin-bottom: 20px;
 }
 
-.sectionBtns {
-    margin-bottom: 0;
+.sectionBtns {   
     align-items: center;
+    margin-left: 20%;
 }
 
 .bell {
