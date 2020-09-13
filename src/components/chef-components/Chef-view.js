@@ -95,13 +95,16 @@ const ChefView = () => {
                           <div key={indiceA}
                             className={styles.sectionItem}>
                             <p>{element.nombre} {element.cantidad}</p>
+                            <div className={styles.observacionesdiv}>
                             <p>{element.observaciones}</p>
+                            </div>
                             {
                               [element.adicionales].map(adicionales => {                               
                                 return (
                                   adicionales.map((adicional, ind) => {
                                     return (
                                       <div key={ind}>{adicional.nombre}</div>
+                                      
                                     )
                                   })
                                 )
@@ -116,7 +119,7 @@ const ChefView = () => {
                   }
                 </div>
                 <div className={styles.buttonKitchen}>
-                  <button className={styles.botonCocina}>En Proceso</button>
+                  {/* <button className={styles.botonproceso}>En Proceso</button> */}
                   <button onClick={() => enviarPedidoListo((ordenes.data().id), (ordenes.data()), ordenes)} className={styles.botonCocina}>Listo</button>
                 </div>
               </div>
