@@ -137,12 +137,21 @@ h2 {
 .titulosGrey:hover {
     color: #FB5607;
 }
+ table{
+    border:white 2px solid;
+    border-left: none;
+    border-right:none;
+    width: 100%;
+
+} 
+
 
 th {
     margin: 5px;
     font-size: 18px;
     text-align: center;
     color: #FCBF49;
+   
 }
 
 td {
@@ -150,6 +159,7 @@ td {
     font-size: 18px;
     text-align: center;
     color: white;
+   
 }
 
 .boxTable {
