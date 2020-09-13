@@ -37,20 +37,15 @@ const PedidosMesero = (props) => {
     };
 
     const enviarPedidoEntregado = (ordenEntregada, documentoId, index) => {
-        console.log(ordenEntregada);
-        console.log(documentoId);
-        console.log(index);
 
         const filltroPedidosentregados = showOrderStatus.filter(pedidoListo => {
             pedidoListo = pedidoListo.data().id;
-            console.log(pedidoListo);
-            console.log(ordenEntregada.id);
             return pedidoListo !== ordenEntregada.id;
         });
 
         agregarOrdenEntregada(ordenEntregada);
         deleteOrdenEntregada(documentoId);
-        setShowOrderStatus(filltroPedidosentregados); 
+        setShowOrderStatus(filltroPedidosentregados);
 
     }
 
@@ -59,26 +54,22 @@ const PedidosMesero = (props) => {
         <div className={styles.sectionPedido}>
             {
                 showOrderStatus.map((documentos, index) => {
+                    console.log(documentos.doc);
                     return (
                         <div Key={index} className={styles.sectionItemPedido}>
-                            {
-                                [documentos.data()].map((ordenesEntregadas, indiceOrden) => {
-                                    return (
-                                        <div key={ordenesEntregadas} className={styles.boxItemPedido}>
-                                            <div key={indiceOrden} className={styles.sectionItem}>
-                                                <div>
-                                                    {ordenesEntregadas.id}
-                                                    Mesa:{ordenesEntregadas.mesa}
-                                                </div>
-                                                <div>
-                                                    Cliente:{ordenesEntregadas.cliente}
-                                                </div>
 
-                                            </div>
-                                        </div>
-                                    )
-                                })
-                            }
+                            <div className={styles.boxItemPedido}>
+                                <div className={styles.sectionItem}>
+                                    <div>
+                                        {documentos.data().id}
+                                        Mesa:{documentos.data().mesa}
+                                    </div>
+                                    <div>
+                                        Cliente:{documentos.data().cliente}
+                                    </div>
+
+                                </div>
+                            </div>
 
                             <div className={styles.buttonKitchen}>
                                 <button

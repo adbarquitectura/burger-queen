@@ -1,5 +1,4 @@
-{
-  "homepage":"https://github.com/FabianeSantos/burger-queen",
+{  
   "name": "burger-queen",
   "version": "0.1.0",
   "private": true,
@@ -16,9 +15,7 @@
     "react-scripts": "3.4.3",
     "reactfire": "^2.0.0-alpha.3"
   },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+  "scripts": {    
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
