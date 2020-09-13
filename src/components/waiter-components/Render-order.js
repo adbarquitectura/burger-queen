@@ -12,16 +12,16 @@ import editaPedido from '../../img/editarPedido.png';
 
 const RenderOrder = (props) => {
 
-    const [valorIngresado, setValorIngresado] = useState('');
+    /* const [valorIngresado, setValorIngresado] = useState('');
 
-    const [itemIngresado, setitemIngresado] = useState('La Rosalia');
+    const [itemIngresado, setitemIngresado] = useState('La Rosalia'); */
     const [cantidadItemIngresado, setcantidadItemIngresado] = useState(1);
-    const [precioItemIngresado, setprecioItemIngresado] = useState(5000);
+    // const [precioItemIngresado, setprecioItemIngresado] = useState(5000);
     const [totalPedidoIngresado, setTotalPedidoIngresado] = useState(0);
 
-    const [editarItemIngresado, seteditarItemIngresadoo] = useState(false);
+    /* const [editarItemIngresado, seteditarItemIngresadoo] = useState(false);
     const [eliminarItemIngresado, seteliminarItemIngresado] = useState(false);
-
+ */
     const [idPedido, setIdPedido] = useState('');
 
     const [nameClientIngresado, setNameClientIngresado] = useState('');

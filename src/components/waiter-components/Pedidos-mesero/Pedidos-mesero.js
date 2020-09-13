@@ -36,7 +36,7 @@ const PedidosMesero = (props) => {
             });
     };
 
-    const enviarPedidoEntregado = (ordenEntregada, documentoId, index) => {
+    const enviarPedidoEntregado = (ordenEntregada, documentoId) => {
 
         const filltroPedidosentregados = showOrderStatus.filter(pedidoListo => {
             pedidoListo = pedidoListo.data().id;
@@ -53,10 +53,9 @@ const PedidosMesero = (props) => {
 
         <div className={styles.sectionPedido}>
             {
-                showOrderStatus.map((documentos, index) => {
-                    console.log(documentos.doc);
+                showOrderStatus.map((documentos) => {                   
                     return (
-                        <div Key={index} className={styles.sectionItemPedido}>
+                        <div key={documentos.id} className={styles.sectionItemPedido}>
 
                             <div className={styles.boxItemPedido}>
                                 <div className={styles.sectionItem}>
@@ -73,7 +72,7 @@ const PedidosMesero = (props) => {
 
                             <div className={styles.buttonKitchen}>
                                 <button
-                                    onClick={() => enviarPedidoEntregado((documentos.data()), documentos.id, index)}
+                                    onClick={() => enviarPedidoEntregado((documentos.data()), documentos.id)}
                                     className={styles.botonCocina}>Entregado</button>
                                 {/* <button className={styles.botonCocina}>Listo para entregar</button> */}
                             </div>
