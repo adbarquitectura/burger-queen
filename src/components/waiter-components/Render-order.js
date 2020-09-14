@@ -11,6 +11,7 @@ const RenderOrder = (props) => {
 
     const [cantidadItemIngresado, setcantidadItemIngresado] = useState(1);
     const [totalPedidoIngresado, setTotalPedidoIngresado] = useState(0);
+    const [mensaje, setMensaje]= useState('')
 
 
     const [idPedido, setIdPedido] = useState('');
@@ -66,13 +67,15 @@ const RenderOrder = (props) => {
 
     const btnEnviarPedido = () => {
         if (nameClientIngresado === "" || tableClientIngresado === "") {
-            alert('Por favor ingresar datos del Pedido');
+            // alert('Por favor ingresar datos del Pedido');
+            setMensaje('*Por favor ingresar datos del Pedido')
         } else {
             addOrderFirebase().then(() => {
 
                 setTableClientIngresado('');
                 setNameClientIngresado('');
                 props.limpiarEstadoOrden();
+                setMensaje('')
 
             })
             console.log('se envio');
@@ -190,6 +193,8 @@ const RenderOrder = (props) => {
                     className={styles.inputCliente}
                     value={nameClientIngresado}
                 />
+
+                        <h4>{mensaje}</h4>
             </div>
             <div className={styles.sectionBtns}>
                 <button onClick={btnEnviarPedido} className={styles.buttonBase}>Enviar Pedido</button>
